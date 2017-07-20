@@ -34,9 +34,18 @@ env:
     - TWBS_TEST=core
     - TWBS_TEST=validate-html
     - TWBS_TEST=sauce-js-unit
+    - TWBS_TEST=prep-release
 matrix:
   fast_finish: true
 notifications:
   slack: askanything:tSVB70CS7mqvrtFfQ8H0s12l
   webhooks:
     - http://savage1.twbsapps.com/savage/travis
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: ee72ad9f30cb2b8e07f1007b07b2db06f90c26e3
+  on:
+    branch: v3-dev
+    target_branch: gh-pages
