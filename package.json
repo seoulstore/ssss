@@ -14,12 +14,13 @@
   "homepage": "http://getbootstrap.com",
   "author": "Twitter, Inc.",
   "scripts": {
+    "sass-lint": "bundle exec scss-lint --config .scss-lint.yml scss/*.scss",
     "change-version": "node grunt/change-version.js",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
     "test": "grunt test"
   },
   "style": "dist/css/bootstrap.css",
-  "less": "less/bootstrap.less",
+  "sass": "scss/bootstrap.scss",
   "main": "./dist/js/npm",
   "repository": {
     "type": "git",
@@ -30,6 +31,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "acorn": "^5.1.1",
+    "acorn-globals": "^4.0.0",
     "btoa": "~1.1.2",
     "glob": "~7.0.3",
     "grunt": "~1.0.1",
@@ -46,16 +49,18 @@
     "grunt-contrib-less": "~1.3.0",
     "grunt-contrib-pug": "~1.0.0",
     "grunt-contrib-qunit": "~0.7.0",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "~1.0.0",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-csscomb": "~3.1.0",
-    "grunt-exec": "~1.0.0",
+    "grunt-exec": "^2.0.0",
     "grunt-html": "~8.0.1",
     "grunt-jekyll": "~0.4.4",
     "grunt-jscs": "~3.0.1",
     "grunt-saucelabs": "~9.0.0",
     "load-grunt-tasks": "~3.5.0",
     "markdown-it": "^7.0.0",
+    "node-sass": "^4.5.3",
     "shelljs": "^0.7.0",
     "shx": "^0.1.2",
     "time-grunt": "^1.3.0"
@@ -68,7 +73,7 @@
     "fonts",
     "grunt",
     "js/*.js",
-    "less/**/*.less",
+    "scss/bootstrap.scss",
     "Gruntfile.js",
     "LICENSE"
   ],

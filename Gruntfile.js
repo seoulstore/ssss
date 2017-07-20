@@ -7,7 +7,7 @@
 
 module.exports = function (grunt) {
   'use strict';
-
+  
   // Force use of Unix newlines
   grunt.util.linefeed = '\n';
 
@@ -18,11 +18,13 @@ module.exports = function (grunt) {
   var fs = require('fs');
   var path = require('path');
   var generateGlyphiconsData = require('./grunt/bs-glyphicons-data-generator.js');
-  var BsLessdocParser = require('./grunt/bs-lessdoc-parser.js');
-  var getLessVarsData = function () {
-    var filePath = path.join(__dirname, 'less/variables.less');
+  var BsSassdocParser = require('./grunt/bs-sassdoc-parser.js');
+  var getSassVarsData = function () {
+    var filePath = path.join(__dirname, 'scss/bootstrap/_variables.scss');
+    // var filePath = path.join(__dirname, 'less/variables.less');
     var fileContent = fs.readFileSync(filePath, { encoding: 'utf8' });
-    var parser = new BsLessdocParser(fileContent);
+    var parser = new BsSassdocParser(fileContent);
+    
     return { sections: parser.parseFile() };
   };
   var generateRawFiles = require('./grunt/bs-raw-files-generator.js');
@@ -151,29 +153,14 @@ module.exports = function (grunt) {
       },
       files: 'js/tests/index.html'
     },
-
-    less: {
-      compileCore: {
+    
+    sass: {
+      dist: {
         options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+          style: 'expanded'
         },
-        src: 'less/bootstrap.less',
+        src: ['scss/bootstrap.scss'],
         dest: 'dist/css/<%= pkg.name %>.css'
-      },
-      compileTheme: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>-theme.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
-        },
-        src: 'less/theme.less',
-        dest: 'dist/css/<%= pkg.name %>-theme.css'
       }
     },
 
@@ -186,12 +173,6 @@ module.exports = function (grunt) {
           map: true
         },
         src: 'dist/css/<%= pkg.name %>.css'
-      },
-      theme: {
-        options: {
-          map: true
-        },
-        src: 'dist/css/<%= pkg.name %>-theme.css'
       },
       docs: {
         src: ['docs/assets/css/src/docs.css']
@@ -206,7 +187,7 @@ module.exports = function (grunt) {
 
     csslint: {
       options: {
-        csslintrc: 'less/.csslintrc'
+        csslintrc: 'scss/.csslintrc'
       },
       dist: [
         'dist/css/bootstrap.css',
@@ -223,7 +204,7 @@ module.exports = function (grunt) {
         src: 'docs/assets/css/src/docs.css'
       }
     },
-
+    
     cssmin: {
       options: {
         // TODO: disable `zeroUnits` optimization once clean-css 3.2 is released
@@ -238,10 +219,6 @@ module.exports = function (grunt) {
         src: 'dist/css/<%= pkg.name %>.css',
         dest: 'dist/css/<%= pkg.name %>.min.css'
       },
-      minifyTheme: {
-        src: 'dist/css/<%= pkg.name %>-theme.css',
-        dest: 'dist/css/<%= pkg.name %>-theme.min.css'
-      },
       docs: {
         src: [
           'docs/assets/css/ie10-viewport-bug-workaround.css',
@@ -254,7 +231,7 @@ module.exports = function (grunt) {
 
     csscomb: {
       options: {
-        config: 'less/.csscomb.json'
+        config: 'scss/.csscomb.json'
       },
       dist: {
         expand: true,
@@ -277,7 +254,7 @@ module.exports = function (grunt) {
     copy: {
       fonts: {
         expand: true,
-        src: 'fonts/**',
+        src: 'fonts/**/*.*',
         dest: 'dist/'
       },
       docs: {
@@ -351,7 +328,7 @@ module.exports = function (grunt) {
     pug: {
       options: {
         pretty: true,
-        data: getLessVarsData
+        data: getSassVarsData
       },
       customizerVars: {
         src: 'docs/_pug/customizer-variables.pug',
@@ -405,6 +382,14 @@ module.exports = function (grunt) {
     exec: {
       npmUpdate: {
         command: 'npm update'
+      },
+      sassLint: {
+        command: 'npm run sass-lint',
+        stdout: true,
+        stderr: true
+      },
+      localStart: {
+        command: 'bundle exec jekyll serve'
       }
     },
 
@@ -426,10 +411,9 @@ module.exports = function (grunt) {
         ]
       }
     }
-
+    
   });
-
-
+  
   // These plugins provide necessary tasks.
   require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
   require('time-grunt')(grunt);
@@ -467,6 +451,7 @@ module.exports = function (grunt) {
     testSubtasks.push('connect');
     testSubtasks.push('saucelabs-qunit');
   }
+  
   grunt.registerTask('test', testSubtasks);
   grunt.registerTask('test-js', ['jshint:core', 'jshint:test', 'jshint:grunt', 'jscs:core', 'jscs:test', 'jscs:grunt', 'qunit']);
 
@@ -474,8 +459,8 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
 
   // CSS distribution task.
-  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+  grunt.registerTask('sass-compile', ['sass']);
+  grunt.registerTask('dist-css', ['sass-compile', 'autoprefixer:core', 'csscomb:dist', 'cssmin:minifyCore']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
@@ -508,4 +493,5 @@ module.exports = function (grunt) {
   grunt.registerTask('docs-github', ['jekyll:github', 'htmlmin']);
 
   grunt.registerTask('prep-release', ['dist', 'docs', 'docs-github', 'compress']);
+  
 };
