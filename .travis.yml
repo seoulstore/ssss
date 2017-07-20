@@ -4,48 +4,36 @@ language: node_js
 git:
   depth: 10
 node_js:
-  - "iojs"
+- iojs
 before_install:
-  # Remove ./node_modules/.bin from PATH so node-which doesn't replace Unix which and cause RVM to barf. See https://github.com/travis-ci/travis-ci/issues/5092
-  - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))' "$PATH")
-  - rvm install 2.2
-  - rvm use 2.2 --fuzzy
-  #- "export TRAVIS_COMMIT_MSG=\"$(git log --format=%B --no-merges -n 1)\""
-  #- echo "$TRAVIS_COMMIT_MSG" | grep '\[skip validator\]'; export TWBS_DO_VALIDATOR=$?; true
-  #- echo "$TRAVIS_COMMIT_MSG" | grep '\[skip sauce\]'; export TWBS_DO_SAUCE=$?; true
-  #- if [ "$TRAVIS_REPO_SLUG" = twbs-savage/bootstrap ]; then export TWBS_DO_VALIDATOR=0; fi
-  - gem install sass
+- export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
+  as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))'
+  "$PATH")
+- rvm install 2.2
+- rvm use 2.2 --fuzzy
+- gem install sass
 install:
-  - bundle install --deployment --jobs=1
-  - cp grunt/npm-shrinkwrap.json ./
-  - npm install
+- bundle install --deployment --jobs=1
+- cp grunt/npm-shrinkwrap.json ./
+- npm install
 cache:
   directories:
-    - node_modules
-    - vendor/bundle
+  - node_modules
+  - vendor/bundle
 env:
   global:
-    - NPM_CONFIG_PROGRESS="false"
-    - SAUCE_USERNAME="bootstrap"
-    - secure: "pJkBwnuae9dKU5tEcCqccfS1QQw7/meEcfz63fM7ba7QJNjoA6BaXj08L5Z3Vb5vBmVPwBawxo5Hp0jC0r/Z/O0hGnAmz/Cz09L+cy7dSAZ9x4hvZePSja/UAusaB5ogMoO8l2b773MzgQeSmrLbExr9BWLeqEfjC2hFgdgHLaQ="
-    - secure: "RKWpS+P20b4tG9tawzCMJSmQftoonmC7tJzyGYiHuEM1TcpHALLBcnzKlr/+DiPTfzDJWY4kS8pxfhK4uXOe8OHnhpMNub7LEWtFPePlZIervOJcsOydaQocTKqVVWD6OUubMeQmQ+tZmvmpjoJ1uPPEbFs9ciF7+dv3U5tLUZ0="
-    - secure: "XswSKBY0HJ/aO9VOBeWlvGpqSFF/DsJmNKz7o5RkJMJX340qe44J929uUNwwOwlv9YrgptzC2W6l8bpmZQV+p6IYs99SoSA8CCaUfIJaqeU9x/UiT5vIHgqaNax+vFJwvzHLpF5v/ggFqFEKCd54gCDasePLTztHeC4oL104iaQ="
+  - NPM_CONFIG_PROGRESS="false"
+  - SAUCE_USERNAME="bootstrap"
   matrix:
-#    - TWBS_TEST=core
-#    - TWBS_TEST=validate-html
-#    - TWBS_TEST=sauce-js-unit
-    - TWBS_TEST=prep-release
+  - TWBS_TEST=prep-release
+  - secure: WlP4D3cVn6zFhXkAs4IEUatCrV8DeT0G394KsE1gsXrpY7XpIzv90bDP/8MtalzhdeGOhhfddGNTSFM55hl9m5riwo1sAoeVeT80m++N5FFKOc/hFcBksDXxnG7ivicuyTjMNNNHJVFtVOh4a02kGKnY0rfiiJmSB2wiCHX6tPVgFDJKoX3Vb+66B8EX4rXh07s/I3pget1iwvc66LF+7yoi8MCK/KtSbyVKEnEXKK5CV/iP5CayNiOJT6SCtFpbMshvQoxYQMUxMh9U1pO6jQLj2t0GPae0T6Hu9DyvZgetZIk1+SqNDBYHfRq6uAAXbwq3YGzdnPq+DpIQgOhkuNGXnJK5X5rbVHadiCs86nq5HwI3hcxfDCxMtdBHi+dfiEI7vRGiZq2r5loz3Huq9r74tm6e2EuL+wZA6WvLpM44OXZ1VYdVVufwIpznPTjMt2wZPkroRrmd97e3iRJ2I3QYembdnayrrbLd5jNWPmXH4MoB++KVxgiJ2K8WfE3yczJmEMRu2RIO+F8S4LESchX/z2Waei0Rc8p/up/GRZIoKnltuDLKq6y2YLlp1ex3WMcWgX6bI9Xgq1P+xQ7jDQEiqQDclDQli/ZvDsug6C771aRE9Lm7/6reIGhop0FRXRQKGwXg/E/GMaPe3LWVOKaQiscMyOAG2la0pSVcYrQ=
 matrix:
   fast_finish: true
 notifications:
   slack: askanything:tSVB70CS7mqvrtFfQ8H0s12l
-  webhooks:
-    - http://savage1.twbsapps.com/savage/travis
-
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: ee72ad9f30cb2b8e07f1007b07b2db06f90c26e3
+  github_token: 93abd638201616c81861360e1ff95cc6b6967cc4
   on:
     branch: v3-dev
-    target_branch: gh-pages
