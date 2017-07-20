@@ -14,6 +14,7 @@ before_install:
   - echo "$TRAVIS_COMMIT_MSG" | grep '\[skip validator\]'; export TWBS_DO_VALIDATOR=$?; true
   - echo "$TRAVIS_COMMIT_MSG" | grep '\[skip sauce\]'; export TWBS_DO_SAUCE=$?; true
   - if [ "$TRAVIS_REPO_SLUG" = twbs-savage/bootstrap ]; then export TWBS_DO_VALIDATOR=0; fi
+  - gem install sass
 install:
   - bundle install --deployment --jobs=1
   - cp grunt/npm-shrinkwrap.json ./
