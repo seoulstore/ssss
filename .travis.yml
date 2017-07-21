@@ -20,7 +20,7 @@ install:
 before_script:
   - chmod +x ./deploy.sh
 after_success:
-  - npm
+  - npm run prep-release
   - ./deploy.sh
 cache:
   directories:
