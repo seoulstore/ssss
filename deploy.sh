@@ -7,6 +7,7 @@ ls
 echo ""
 
 DIST_DIRECTORY="_gh_pages/"
+GH_TOKEN="9db57a607ef5c2f6df783875b913ae5fa0e9bfc7"
 CURRENT_COMMIT=`git rev-parse HEAD`
 ORIGIN_URL=`git config --get remote.origin.url`
 ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/$GH_TOKEN@github.com}
