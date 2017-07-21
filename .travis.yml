@@ -6,16 +6,17 @@ git:
 node_js:
 - iojs
 before_install:
-- echo GH_TOKEN
-- export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
+
+- echo GH_TOKEN- export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
   as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))'
   "$PATH")
 - rvm install 2.2
 - rvm use 2.2 --fuzzy
 - gem install sass
+- gem install travis
+- travis encrypt GIT_TOKEN=GH_TOKEN --add
 install:
 - bundle install --deployment --jobs=1
-- travis encrypt GIT_TOKEN=GH_TOKEN --add
 - cp grunt/npm-shrinkwrap.json ./
 - npm install
 before_script:
