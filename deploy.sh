@@ -21,9 +21,9 @@ git checkout -B gh-pages || exit 1
 echo "Removing old static content"
 git rm -rf $DIST_DIRECTORY || exit 1
 
-echo "Copying dist content to root"
-cp -r $DIST_DIRECTORY/ . || exit 1
-cp $DIST_DIRECTORY.gitignore . || exit 1
+#echo "Copying dist content to root"
+#cp -r $DIST_DIRECTORY/ . || exit 1
+#cp $DIST_DIRECTORY.gitignore . || exit 1
 
 echo "Pushing new content to $ORIGIN_URL"
 git config user.name $GIT_USER_NAME || exit 1
