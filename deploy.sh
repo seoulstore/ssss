@@ -26,6 +26,7 @@ git rm -rf $DIST_DIRECTORY || exit 1
 #cp $DIST_DIRECTORY.gitignore . || exit 1
 
 echo "Pushing new content to $ORIGIN_URL"
+echo "$GIT_USER_NAME"
 git config user.name $GIT_USER_NAME || exit 1
 git config user.email $GIT_USER_EMAIL || exit 1
 
