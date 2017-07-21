@@ -6,6 +6,7 @@ git:
 node_js:
 - iojs
 before_install:
+- echo GH_TOKEN
 - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
   as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))'
   "$PATH")
@@ -14,6 +15,7 @@ before_install:
 - gem install sass
 install:
 - bundle install --deployment --jobs=1
+- travis encrypt GIT_TOKEN=GH_TOKEN --add
 - cp grunt/npm-shrinkwrap.json ./
 - npm install
 before_script:
@@ -29,7 +31,7 @@ env:
   global:
   - NPM_CONFIG_PROGRESS="false"
   - SAUCE_USERNAME="bootstrap"
-  - secure: $GH_TOKEN
+#  - secure: $GH_TOKEN
 matrix:
   fast_finish: true
 #notifications:
