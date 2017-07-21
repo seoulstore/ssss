@@ -17,7 +17,8 @@
     "sass-lint": "bundle exec scss-lint --config .scss-lint.yml scss/*.scss",
     "change-version": "node grunt/change-version.js",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
-    "test": "grunt test"
+    "test": "grunt test",
+    "prep-release": "grunt prep-release"
   },
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
