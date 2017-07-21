@@ -4,8 +4,7 @@ language: node_js
 git:
   depth: 10
 node_js:
-- 4
-- 8
+- iojs
 before_install:
 - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
   as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))'
