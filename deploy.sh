@@ -2,17 +2,14 @@
 echo "**********************************   Starting deployment   **********************************"
 echo "********************************** Target: gh-pages branch **********************************"
 pwd
+ls
 
-DIST_DIRECTORY="_gh_pages/"
+DIST_DIRECTORY="dist/"
 CURRENT_COMMIT=`git rev-parse HEAD`
 ORIGIN_URL=`git config --get remote.origin.url`
 ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/$GITHUB_TOKEN@github.com}
 GIT_USER_NAME=`git config user.name`
 GIT_USER_EMAIL=`git config user.email`
-
-echo "DIST_DIRECTORY = $DIST_DIRECTORY"
-echo "ORIGIN_URL = $ORIGIN_URL"
-echo "ORIGIN_URL_WITH_CREDENTIALS = $ORIGIN_URL_WITH_CREDENTIALS"
 
 cp .gitignore $DIST_DIRECTORY || exit 1
 
