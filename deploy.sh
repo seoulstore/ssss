@@ -2,7 +2,7 @@
 echo "**********************************   Starting deployment   **********************************"
 echo "********************************** Target: gh-pages branch **********************************"
 
-DIST_DIRECTORY="_gh_pages/"
+DIST_DIRECTORY="./_gh_pages/"
 CURRENT_COMMIT=`git rev-parse HEAD`
 ORIGIN_URL=`git config --get remote.origin.url`
 ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/$GITHUB_TOKEN@github.com}
