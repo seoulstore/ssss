@@ -26,6 +26,7 @@ git checkout -B gh-pages || exit 1
 #cp $DIST_DIRECTORY.gitignore . || exit 1
 
 echo "Pushing new content to $ORIGIN_URL"
+git remote -v
 git config user.name $GIT_USER_NAME || exit 1
 git config user.email $GIT_USER_EMAIL || exit 1
 
