@@ -34,9 +34,9 @@ matrix:
   fast_finish: true
 #notifications:
 #  slack: askanything:tSVB70CS7mqvrtFfQ8H0s12l
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  on:
-    branch: gh-pages
+#deploy:
+#  provider: pages
+#  skip_cleanup: true
+#  github_token: $GH_TOKEN
+#  on:
+#    branch: gh-pages
