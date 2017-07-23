@@ -4,7 +4,7 @@ echo "********************************** Target: gh-pages branch ***************
 
 #travis encrypt GH_TOKEN="9db57a607ef5c2f6df783875b913ae5fa0e9bfc7" --add
 
-GH_TOKEN="9db57a607ef5c2f6df783875b913ae5fa0e9bfc7"
+#GH_TOKEN="9db57a607ef5c2f6df783875b913ae5fa0e9bfc7"
 DIST_DIRECTORY="_gh_pages/"
 CURRENT_COMMIT=`git rev-parse HEAD`
 ORIGIN_URL=`git config --get remote.origin.url`
