@@ -2,6 +2,7 @@ sudo: required
 #sudo: false
 #dist: trusty
 language: node_js
+group: deprecated-2017Q3
 #dist: precise
 git:
   depth: 10
