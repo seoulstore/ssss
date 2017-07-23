@@ -1,6 +1,7 @@
 sudo: required
 dist: trusty
 language: node_js
+dist: trusty
 git:
   depth: 10
 node_js:
