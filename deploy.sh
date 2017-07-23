@@ -8,8 +8,8 @@ echo "********************************** Target: gh-pages branch ***************
 DIST_DIRECTORY="_gh_pages/"
 CURRENT_COMMIT=`git rev-parse HEAD`
 ORIGIN_URL=`git config --get remote.origin.url`
+#ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/$GH_TOKEN@github.com}
 ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/scjang@github.com}
-ORIGIN_URL_WITH_CREDENTIALS=
 GIT_USER_NAME="scjang"
 GIT_USER_EMAIL="wkdtjdcjf294@gmail.com"
 
