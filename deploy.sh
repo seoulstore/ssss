@@ -17,8 +17,6 @@ git checkout -B gh-pages || exit 1
 echo "Pushing new content to $ORIGIN_URL"
 git config user.name $GIT_USER_NAME || exit 1
 git config user.email $GIT_USER_EMAIL || exit 1
-echo `git config user.name`
-echo `git config user.email`
 
 git add -A . || exit 1
 git commit --allow-empty -m "Regenerated static content for $CURRENT_COMMIT" || exit 1
