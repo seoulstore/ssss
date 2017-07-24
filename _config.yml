@@ -16,6 +16,8 @@ encoding:         UTF-8
 gems:
   - jekyll-sitemap
 
+plugins: docs/_plugins/
+
 # Custom vars
 current_version:  3.3.7
 repo:             https://github.com/twbs/bootstrap
