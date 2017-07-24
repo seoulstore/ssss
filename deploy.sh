@@ -17,7 +17,9 @@ git checkout -B gh-pages || exit 1
 echo ""
 ls
 echo ""
-cd _includes
+git branch
+echo ""
+cd _gh_pages/_includes
 echo ""
 ls
 
