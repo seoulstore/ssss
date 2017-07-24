@@ -14,6 +14,13 @@ cp .gitignore $DIST_DIRECTORY || exit 1
 echo "Checking out gh-pages branch"
 git checkout -B gh-pages || exit 1
 
+echo ""
+ls
+echo ""
+cd _includes
+echo ""
+ls
+
 echo "Pushing new content to $ORIGIN_URL"
 git config user.name $GIT_USER_NAME || exit 1
 git config user.email $GIT_USER_EMAIL || exit 1
