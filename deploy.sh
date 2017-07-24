@@ -19,7 +19,7 @@ ls
 echo ""
 git branch
 echo ""
-cd _gh_pages/
+cd _gh_pages/docs/
 echo ""
 ls
 
