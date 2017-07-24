@@ -4,6 +4,9 @@ group: deprecated-2017Q3
 git:
   depth: 10
 node_js:
+- 4
+- 8
+- 10
 - iojs
 before_install:
 - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
