@@ -4,10 +4,7 @@ group: deprecated-2017Q3
 git:
   depth: 10
 node_js:
-- 4
-- 8
-- 10
-- iojs
+  - 8
 before_install:
 - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
   as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))'
