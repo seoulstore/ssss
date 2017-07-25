@@ -36,6 +36,7 @@ rm -rf package.js
 rm -rf package.json
 rm -rf package-lock.json
 rm -rf .sass-cache
+cp -a /dist/* ./
 
 echo ""
 ls -al
