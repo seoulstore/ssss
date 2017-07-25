@@ -36,7 +36,8 @@ rm -rf package.js
 rm -rf package.json
 rm -rf package-lock.json
 rm -rf .sass-cache
-cp -a /dist/* ./
+cp -a _gh_pages/* ./
+rm -rf _gh_pages
 
 echo ""
 ls -al
