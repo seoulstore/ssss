@@ -14,7 +14,9 @@ git checkout -B gh-pages || exit 1
 
 echo "Remove"
 ls
+echo ""
 #find ./ ! -name $DIST_DIRECTORY -exec rm -rf {} \;
+find ./ -name $DIST_DIRECTORY -type f -ls
 
 echo "Pushing new content to $ORIGIN_URL"
 git add -A . || exit 1
