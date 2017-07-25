@@ -13,11 +13,11 @@ echo "Checking out gh-pages branch"
 git checkout -B gh-pages || exit 1
 
 echo "Remove"
-ls
+ls -al
 echo ""
-find ./ ! -name _gh_pages -exec rm -rf {} \;
-echo ""
-ls
+#find ./ ! -name _gh_pages -exec rm -rf {} \;
+#echo ""
+#ls
 
 echo "Pushing new content to $ORIGIN_URL"
 git add -A . || exit 1
