@@ -12,6 +12,9 @@ cp .gitignore $DIST_DIRECTORY || exit 1
 echo "Checking out gh-pages branch"
 git checkout -B gh-pages || exit 1
 
+echo "Remove"
+find ./ ! -name $DIST_DIRECTORY -exec rm -rf {} \;
+
 echo "Pushing new content to $ORIGIN_URL"
 git add -A . || exit 1
 git commit --allow-empty -m "Regenerated static content for $CURRENT_COMMIT" || exit 1
