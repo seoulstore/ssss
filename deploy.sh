@@ -16,27 +16,7 @@ echo "Remove"
 
 #find ./ ! -name _gh_pages -exec rm -rf {} \;
 #bootstrap-3.3.7-dist.zip
-rm -rf bower.json
-rm -rf CHANGELOG.md
-rm -rf composer.json
-rm -rf _config.yml
-rm -rf CONTRIBUTING.md
-rm -rf deploy.sh
-rm -rf fonts
-rm -rf Gemfile
-rm -rf Gemfile.lock
-rm -rf grunt
-rm -rf Gruntfile.js
-rm -rf .hound.yml
-rm -rf ISSUE_TEMPLATE.md
-rm -rf js
-rm -rf npm-shrinkwrap.json
-rm -rf nuget
-rm -rf package.js
-rm -rf package.json
-rm -rf package-lock.json
-rm -rf .sass-cache
-rm -rf docs
+rm -rf bower.json CHANGELOG.md composer.json _config.yml CONTRIBUTING.md deploy.sh fonts Gemfile Gemfile.lock grunt Gruntfile.js .hound.yml ISSUE_TEMPLATE.md js npm-shrinkwrap.json nuget package.js package.json package-lock.json .sass-cache docs
 cp -a _gh_pages/* ./
 rm -rf _gh_pages
 
