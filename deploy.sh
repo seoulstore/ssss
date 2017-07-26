@@ -13,15 +13,10 @@ echo "Checking out gh-pages branch"
 git checkout -B gh-pages || exit 1
 
 echo "Remove"
-
 #find ./ ! -name _gh_pages -exec rm -rf {} \;
-#bootstrap-3.3.7-dist.zip
 rm -rf bower.json CHANGELOG.md composer.json _config.yml CONTRIBUTING.md deploy.sh fonts Gemfile Gemfile.lock grunt Gruntfile.js .hound.yml ISSUE_TEMPLATE.md js npm-shrinkwrap.json nuget package.js package.json package-lock.json .sass-cache docs
 cp -a _gh_pages/* ./
 rm -rf _gh_pages
-
-echo ""
-ls -al
 
 echo "Pushing new content to $ORIGIN_URL"
 git add -A . || exit 1
