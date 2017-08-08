@@ -42,3 +42,8 @@ docs/.jekyll-metadata
 bower_components
 node_modules
 vendor
+
+
+# local maintenance
+_config.yml
+.travis.yml
