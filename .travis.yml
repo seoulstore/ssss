@@ -26,3 +26,5 @@ env:
   - NPM_CONFIG_PROGRESS="false"
 matrix:
   fast_finish: true
+  notifications:
+    - slack: askanything:tSVB70CS7mqvrtFfQ8H0s12l
