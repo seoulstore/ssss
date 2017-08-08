@@ -10,6 +10,7 @@ source:           ./docs
 destination:      ./_gh_pages
 host:             0.0.0.0
 port:             9001
+# url is local maintenance
 url:              https://scjang.github.io/ssss
 encoding:         UTF-8
 
@@ -18,18 +19,8 @@ gems:
 
 # Custom vars
 current_version:  3.3.7
+# repo is local maintenance
 repo:             https://github.com/scjang/ssss
-
-#sass_repo:        https://github.com/twbs/bootstrap-sass
-
-#download:
-#  source:         https://github.com/scjang/ssss/archive/v3.3.7.zip
-#  dist:           https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip
-#  sass:           https://github.com/twbs/bootstrap-sass/archive/v3.3.7.tar.gz
-
-#blog:             http://blog.getbootstrap.com
-#expo:             http://expo.getbootstrap.com
-#themes:           http://themes.getbootstrap.com
 
 cdn:
   # See https://www.srihash.org for info on how to generate the hashes
