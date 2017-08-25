@@ -2,11 +2,16 @@
  
 ## Development Env
 
-Requirements
+개발도구
 
 * Ruby 2.2
 * Bundler 1.15
 * grunt-cli
+
+Changelogs
+
+* 문서는 master의 docs 디렉토리를 보도록 변경
+* ssss.seoulstore.com CNAME 레코드 추가
 
 [![Build Status](https://img.shields.io/travis/twbs/bootstrap/master.svg)](https://travis-ci.org/twbs/bootstrap)
 [![devDependency Status](https://img.shields.io/david/dev/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap#info=devDependencies)
