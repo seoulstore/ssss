@@ -1,7 +1,7 @@
 # SSSS (Seoul Store Style Sheet)
 
-[![Build Status](https://img.shields.io/travis/twbs/bootstrap/master.svg)](https://travis-ci.org/twbs/bootstrap)
-[![devDependency Status](https://img.shields.io/david/dev/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap#info=devDependencies)
+[![Build Status](https://travis-ci.org/seoulstore/ssss.svg?branch=master)](https://travis-ci.org/seoulstore/ssss)
+[![devDependencies Status](https://david-dm.org/seoulstore/ssss/dev-status.svg)](https://david-dm.org/seoulstore/ssss?type=dev)
  
 ### 준비물
 
