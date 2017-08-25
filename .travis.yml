@@ -11,6 +11,7 @@ before_install:
     "$PATH")
   - rvm install 2.2
   - rvm use 2.2 --fuzzy
+  - gem install bundler
   - gem install sass
 install:
   - bundle install --deployment --jobs=1
