@@ -21,7 +21,7 @@ before_script:
   - chmod +x ./deploy.sh
 after_success:
   - npm run prep-release
-  - "./deploy.sh"
+  # - "./deploy.sh"
 cache:
   directories:
   - node_modules
