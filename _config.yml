@@ -13,7 +13,7 @@ port:             9001
 url:              http://scjang.github.io/ssss
 encoding:         UTF-8
 
-gems:
+plugins:
   - jekyll-sitemap
 
 # Custom vars

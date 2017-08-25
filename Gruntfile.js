@@ -186,12 +186,11 @@ module.exports = function (grunt) {
     
     cssmin: {
       options: {
-        // TODO: disable `zeroUnits` optimization once clean-css 3.2 is released
-        //    and then simplify the fix for https://github.com/twbs/bootstrap/issues/14837 accordingly
+        // turn off the sourceMap option that cause Missing original source file warning
         compatibility: 'ie8',
         keepSpecialComments: '*',
-        sourceMap: true,
-        sourceMapInlineSources: true,
+        sourceMap: false,
+        sourceMapInlineSources: false,
         advanced: false
       },
       minifyCore: {
