@@ -1,20 +1,24 @@
-# Seoul Store Style Sheet
- 
-## Development Env
+# SSSS (Seoul Store Style Sheet)
 
-개발도구
+[![Build Status](https://img.shields.io/travis/twbs/bootstrap/master.svg)](https://travis-ci.org/twbs/bootstrap)
+[![devDependency Status](https://img.shields.io/david/dev/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap#info=devDependencies)
+ 
+### 준비물
 
 * Ruby 2.2
 * Bundler 1.15
 * grunt-cli
 
-Changelogs
+### 개발방법
+
+CSS 수정은 가급적 변수를 변경하세요. 만약 직접 수정해야 한다면 scss 디렉토리에서 시작하면 됩니다. 수정한 것을 확인하기 위해서는 `grunt prep-release`를 해야 jekyll 문서에서 변경된 것을 볼 수 있습니다. 향후 watch를 할 수 있도록 변경해보죠. jekyll을 로컬에서 띄우는 명령어는 `bundle exec jekyll serve` 입니다.
+
+### Changelogs 
 
 * 문서는 master의 docs 디렉토리를 보도록 변경
 * ssss.seoulstore.com CNAME 레코드 추가
 
-[![Build Status](https://img.shields.io/travis/twbs/bootstrap/master.svg)](https://travis-ci.org/twbs/bootstrap)
-[![devDependency Status](https://img.shields.io/david/dev/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap#info=devDependencies)
+
 
 # Bootstrap
 
