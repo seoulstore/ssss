@@ -7,9 +7,10 @@
 
 'use strict';
 
-var fs = require('fs');
+var fs = require('fs'),
+    gulpUtil = require('gulp-util');
 
-module.exports = function generateGlyphiconsData(grunt) {
+module.exports = function generateGlyphiconsData() {
   // Pass encoding, utf8, so `readFileSync` will return a string instead of a
   // buffer
   var glyphiconsFile = fs.readFileSync('scss/bootstrap/_glyphicons.scss', 'utf8');
@@ -36,7 +37,8 @@ module.exports = function generateGlyphiconsData(grunt) {
   try {
     fs.writeFileSync(glyphiconsYml, glyphiconsData);
   } catch (err) {
-    grunt.fail.warn(err);
+    gulpUtil.log(err);
   }
-  grunt.log.writeln('File ' + glyphiconsYml.cyan + ' created.');
-};
+  
+  gulpUtil.log('File ' + glyphiconsYml + ' created.');
+ };

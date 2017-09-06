@@ -10,6 +10,7 @@
 var fs = require('fs');
 var btoa = require('btoa');
 var glob = require('glob');
+var gulpUtil = require('gulp-util');
 
 function getFiles(type) {
   var files = {};
@@ -40,7 +41,9 @@ module.exports = function generateRawFilesJs(grunt, banner) {
   try {
     fs.writeFileSync(rawFilesJs, files);
   } catch (err) {
-    grunt.fail.warn(err);
+    // grunt.fail.warn(err);
+    gulpUtil.log(err);
   }
-  grunt.log.writeln('File ' + rawFilesJs.cyan + ' created.');
+  // grunt.log.writeln('File ' + rawFilesJs.cyan + ' created.');
+  gulpUtil.log('File ' + rawFilesJs.cyan + ' created.');
 };
