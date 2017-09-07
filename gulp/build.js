@@ -1,19 +1,20 @@
 (function () {
   'use strict';
   
-  var gulp = require('gulp'),
-      sass = require('gulp-sass'),
-      postcss = require('gulp-postcss'),
-      autoprefixer = require('autoprefixer'),
-      $ = require('gulp-load-plugins')(),
-      fs = require('fs'),
-      generateGlyphiconsData = require('../grunt/bs-glyphicons-data-generator.js'),
-      BsSassdocParser = require('../grunt/bs-sassdoc-parser.js'),
+  var gulp             = require('gulp'),
+      sass             = require('gulp-sass'),
+      postcss          = require('gulp-postcss'),
+      autoprefixer     = require('autoprefixer'),
+      $                = require('gulp-load-plugins')(),
+      _                = require('lodash'),
+      fs               = require('fs'),
       generateRawFiles = require('../grunt/bs-raw-files-generator.js'),
-      cp = require('child_process'),
-      gulpUtil = require('gulp-util'),
-      _ = require('lodash'),
-      path = gulp.path,
+      cp               = require('child_process'),
+      gulpUtil         = require('gulp-util'),
+      runSequence      = require('run-sequence'),
+      path             = gulp.path,
+      generateGlyphiconsData = require('../grunt/bs-glyphicons-data-generator.js'),
+      BsSassdocParser        = require('../grunt/bs-sassdoc-parser.js'),
       htmlminOpt = {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
@@ -47,7 +48,7 @@
   
   gulp.task('concat:docsjs', function () {
     
-    gulp.src([
+    return gulp.src([
         path.assets + '/js/vendor/holder.min.js',
         path.assets + '/js/vendor/ZeroClipboard.min.js',
         path.assets + '/js/vendor/anchor.min.js',
@@ -61,7 +62,7 @@
   
   gulp.task('concat:customizerjs', function () {
     
-    gulp.src([
+    return gulp.src([
         path.assets + '/js/vendor/autoprefixer.js',
         path.assets + '/js/vendor/less.min.js',
         path.assets + '/js/vendor/jszip.min.js',
@@ -80,7 +81,7 @@
   // 사스 컴파일 컨캣
   gulp.task('concat:bootstrapCss', function () {
     
-    gulp.src(path.scss + '/**/*.scss')
+    return gulp.src(path.scss + '/**/*.scss')
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'))
@@ -90,7 +91,7 @@
   // 사스 컴파일 미니파이
   gulp.task('minify:bootstrapCss', function () {
     
-    gulp.src(path.scss + '/**/*.scss')
+    return gulp.src(path.scss + '/**/*.scss')
       .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
       .pipe($.rename('bootstrap.min.css'))
       .pipe(postcss([autoprefixer()]))
@@ -100,7 +101,7 @@
   
   gulp.task('concat:bootstrapJs', function () {
     
-    gulp.src([path.root + 'js/*.js', '!' + path.root + 'js/tests'])
+    return gulp.src([path.root + 'js/*.js', '!' + path.root + 'js/tests'])
       .pipe($.concat('bootstrap.js'))
       .pipe(gulp.dest(path.dist + '/js'));
     
@@ -108,18 +109,16 @@
   
   gulp.task('minify:bootstrapJs', function () {
     
-    setTimeout(function () {
-      gulp.src([path.dist + '/js/bootstrap.js'])
-        .pipe($.uglify())
-        .pipe($.rename('bootstrap.min.js'))
-        .pipe(gulp.dest(path.dist + '/js'));
-    }, 100);
+    return gulp.src([path.dist + '/js/bootstrap.js'])
+      .pipe($.uglify())
+      .pipe($.rename('bootstrap.min.js'))
+      .pipe(gulp.dest(path.dist + '/js'));
 
   });
   
   gulp.task('concat:docsCss', function () {
     
-    gulp.src(path.assets + '/css/src/*.css')
+    return gulp.src(path.assets + '/css/src/*.css')
       .pipe($.concat('docs.min.css'))
       .pipe(gulp.dest(path.assets + '/css'))
       .pipe($.debug({showFiles: true}));
@@ -127,7 +126,7 @@
   });
   
   gulp.task('generateGlyphiconsData', function () {
-    generateGlyphiconsData.call();
+    return generateGlyphiconsData.call();
   });
   
   gulp.task('pug', function () {
@@ -140,7 +139,7 @@
       return { sections: parser.parseFile() };
     }();
     
-    gulp.src([path.docs + '/_pug/*.pug'])
+    return gulp.src([path.docs + '/_pug/*.pug'])
       .pipe($.foreach(function (stream, file) {
         var pugFileName = getFileName(file),
             htmlFile = pugFileName.indexOf('nav') > 0 ? 'customize.html' : 'customizer-variables.html',
@@ -158,7 +157,7 @@
   });
   
   gulp.task('generateRawFiles', function () {
-    generateRawFiles();
+    return generateRawFiles();
   });
   
   gulp.task('jekyll:build', ['clean:ghPages'], function () {
@@ -176,7 +175,7 @@
   });
   
   gulp.task('minify:jekyllHtml', function () {
-    gulp.src([path.ghPages + '/**/*.html', '!' + path.ghPages + '/examples/**/*.html'])
+    return gulp.src([path.ghPages + '/**/*.html', '!' + path.ghPages + '/examples/**/*.html'])
       .pipe($.foreach(function (stream, file) {
         var filePath = _.last(file.path.split(file.base)),
             fileName = filePath.split('/'),
@@ -187,32 +186,46 @@
         return stream
           .pipe($.rename('_' + lastFileName))
           .pipe($.htmlmin(htmlminOpt))
-          .pipe($.debug())
           .pipe(gulp.dest(destPath));
       }));
   });
   
-  /*gulp.task('rename:jekyllHtml', function () {
-    gulp.src([path.ghPages + '/!**!/!*.html', '!' + path.ghPages + '/examples/!**!/!*.html'])
+  gulp.task('rename:jekyllHtml', ['clean:ghPagesOriginHtml'], function () {
+    return gulp.src([path.ghPages + '/**/*.html', '!' + path.ghPages + '/examples/!**/!*.html'])
       .pipe($.foreach(function (stream, file) {
         var filePath = _.last(file.path.split(file.base)),
           fileName = filePath.split('/'),
-          lastDir = _.head(fileName) !== 'index.html' ? _.head(fileName) : '',
+          lastDir = _.head(fileName) !== '_index.html' ? _.head(fileName) : '',
           destPath = _.isEmpty(lastDir) ? path.ghPages : path.ghPages + '/' + lastDir;
 
         return stream
           .pipe($.rename('index.html'))
-          .pipe($.debug())
           .pipe(gulp.dest(destPath));
       }));
-  });*/
+  });
   
-  gulp.task('bootstrapJs', ['concat:bootstrapJs', 'minify:bootstrapJs']);
-  gulp.task('bootstrapCss', ['concat:bootstrapCss', 'minify:bootstrapCss']);
+  gulp.task('bootstrapJs', function () {
+    runSequence('concat:bootstrapJs', 'minify:bootstrapJs');
+  });
   
-  gulp.task('concat', ['concat:docsCss', 'concat:docsjs', 'concat:customizerjs']);
-  gulp.task('concat:js', ['concat:docsjs', 'concat:customizerjs']);
-  gulp.task('jekyllHtmlMin', ['minify:jekyllHtml', 'clean:ghPagesOriginHtml', '']);
-  // gulp.task('build', ['jekyll:build', '']);
+  gulp.task('bootstrapCss', function () {
+    runSequence('concat:bootstrapCss', 'minify:bootstrapCss');
+  });
+  
+  gulp.task('concat', function () {
+    runSequence('concat:docsCss', 'concat:docsjs', 'concat:customizerjs');
+  });
+  
+  gulp.task('concat:js', function () {
+    runSequence(['concat:docsjs', 'concat:customizerjs']);
+  });
+  
+  gulp.task('jekyllHtmlMin', function () {
+    runSequence('minify:jekyllHtml', 'rename:jekyllHtml', 'clean:ghPagesCustomHtml');
+  });
+  
+  gulp.task('build', function () {
+    runSequence('jekyll:build', 'jekyllHtmlMin');
+  });
   
 })();

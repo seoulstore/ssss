@@ -1,7 +1,8 @@
 (function () {
   'use strict';
   
-  var gulp = require('gulp');
+  var gulp = require('gulp'),
+      runSequence = require('run-sequence');
   
   gulp.path = {
     root: './',
@@ -14,8 +15,16 @@
   
   require('require-dir')('./gulp');
   
-  gulp.task('dist', ['clean:dist', 'bootstrapCss', 'bootstrapJs', 'copy:fonts']);
-  gulp.task('docs', ['concat', 'generateGlyphiconsData', 'generateRawFiles', 'pug']);
-  gulp.task('prep-release', ['dist', 'docs']);
+  gulp.task('dist', function () {
+    runSequence('clean:dist', 'bootstrapCss', 'bootstrapJs', 'copy:fonts');
+  });
+  
+  gulp.task('docs', function () {
+    runSequence('concat', 'generateGlyphiconsData', 'generateRawFiles', 'pug');
+  });
+
+  gulp.task('prep-release', function () {
+    runSequence('dist', 'docs', 'jekyllHtmlMin', 'build');
+  });
   
 })();

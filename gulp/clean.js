@@ -17,4 +17,8 @@
     return del([path.ghPages + '/**/index.html', '!examples/**/*.html'], done);
   });
   
+  gulp.task('clean:ghPagesCustomHtml', function (done) {
+    return del([path.ghPages + '/**/_index.html', '!examples/**/*.html'], done);
+  });
+  
 })();
