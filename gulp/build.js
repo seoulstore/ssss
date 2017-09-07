@@ -2,18 +2,15 @@
   'use strict';
   
   var gulp             = require('gulp'),
-      sass             = require('gulp-sass'),
-      postcss          = require('gulp-postcss'),
       autoprefixer     = require('autoprefixer'),
       $                = require('gulp-load-plugins')(),
       _                = require('lodash'),
       fs               = require('fs'),
-      generateRawFiles = require('../grunt/bs-raw-files-generator.js'),
       cp               = require('child_process'),
-      gulpUtil         = require('gulp-util'),
       runSequence      = require('run-sequence'),
       path             = gulp.path,
       generateGlyphiconsData = require('../grunt/bs-glyphicons-data-generator.js'),
+      generateRawFiles       = require('../grunt/bs-raw-files-generator.js'),
       BsSassdocParser        = require('../grunt/bs-sassdoc-parser.js'),
       htmlminOpt = {
         collapseBooleanAttributes: true,
@@ -54,6 +51,9 @@
         path.assets + '/js/vendor/anchor.min.js',
         path.assets + '/js/src/application.js'
       ])
+      .pipe($.eslint())
+      .pipe($.eslint.format())
+      .pipe($.eslint.failAfterError())
       .pipe($.concat('docs.min.js'))
       .pipe($.uglify({ output: { quote_style: 1 }}).on('error', $.util.log))
       .pipe(gulp.dest(path.assets + '/js'));
@@ -72,36 +72,42 @@
         path.assets + '/js/raw-files.min.js',
         path.assets + '/js/src/customizer.js'
       ])
+      .pipe($.eslint())
+      .pipe($.eslint.format())
+      .pipe($.eslint.failAfterError())
       .pipe($.concat('customize.min.js'))
       .pipe($.uglify({ output: { quote_style: 1 }}).on('error', $.util.log))
       .pipe(gulp.dest(path.assets + '/js'));
     
   });
   
-  // 사스 컴파일 컨캣
   gulp.task('concat:bootstrapCss', function () {
     
     return gulp.src(path.scss + '/**/*.scss')
-      .pipe(sass().on('error', sass.logError))
-      .pipe(postcss([autoprefixer()]))
-      .pipe(gulp.dest(path.dist + '/css'))
+      .pipe($.sassLint())
+      .pipe($.sassLint.failOnError())
+      .pipe($.sass().on('error', $.sass.logError))
+      .pipe($.postcss([autoprefixer()]))
+      .pipe(gulp.dest(path.dist + '/css'));
     
   });
   
-  // 사스 컴파일 미니파이
   gulp.task('minify:bootstrapCss', function () {
     
     return gulp.src(path.scss + '/**/*.scss')
-      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+      .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
       .pipe($.rename('bootstrap.min.css'))
-      .pipe(postcss([autoprefixer()]))
-      .pipe(gulp.dest(path.dist + '/css'))
+      .pipe($.postcss([autoprefixer()]))
+      .pipe(gulp.dest(path.dist + '/css'));
     
   });
   
   gulp.task('concat:bootstrapJs', function () {
     
     return gulp.src([path.root + 'js/*.js', '!' + path.root + 'js/tests'])
+      .pipe($.eslint())
+      .pipe($.eslint.format())
+      .pipe($.eslint.failAfterError())
       .pipe($.concat('bootstrap.js'))
       .pipe(gulp.dest(path.dist + '/js'));
     
@@ -120,13 +126,13 @@
     
     return gulp.src(path.assets + '/css/src/*.css')
       .pipe($.concat('docs.min.css'))
-      .pipe(gulp.dest(path.assets + '/css'))
-      .pipe($.debug({showFiles: true}));
+      .pipe(gulp.dest(path.assets + '/css'));
+      // .pipe($.debug({showFiles: true}));
     
   });
   
   gulp.task('generateGlyphiconsData', function () {
-    return generateGlyphiconsData.call();
+    generateGlyphiconsData.call();
   });
   
   gulp.task('pug', function () {
@@ -150,59 +156,65 @@
             data: getSassVarsData
           }))
           .pipe($.rename(htmlFile))
-          .pipe($.debug())
           .pipe(gulp.dest(destPath));
       }));
     
   });
   
   gulp.task('generateRawFiles', function () {
-    return generateRawFiles();
+    generateRawFiles();
   });
   
-  gulp.task('jekyll:build', ['clean:ghPages'], function () {
+  gulp.task('jekyll:build', function () {
+    
     var jekyll = cp.spawn('jekyll', ['build']),
-      jekyllLogger = function (buffer) {
-        buffer.toString()
-          .split(/\n/)
-          .forEach(function (message) {
-            gulpUtil.log('Jekyll: ' + message);
-          });
-      };
+        jekyllLogger = function (buffer) {
+          buffer.toString()
+            .split(/\n/)
+            .forEach(function (message) {
+              $.util.log('Jekyll: ' + message);
+            });
+        };
     
     jekyll.stdout.on('data', jekyllLogger);
     jekyll.stderr.on('data', jekyllLogger);
+    
   });
   
-  gulp.task('minify:jekyllHtml', function () {
-    return gulp.src([path.ghPages + '/**/*.html', '!' + path.ghPages + '/examples/**/*.html'])
+  /*gulp.task('minify:jekyllHtml', function (done) {
+    
+    gulp.src([path.ghPages + '/!**!/!*.html', '!' + path.ghPages + '/examples/!**!/!*.html'])
       .pipe($.foreach(function (stream, file) {
-        var filePath = _.last(file.path.split(file.base)),
-            fileName = filePath.split('/'),
-            lastDir = _.head(fileName) !== 'index.html' ? _.head(fileName) : '',
+        var filePath     = _.last(file.path.split(file.base)),
+            fileName     = filePath.split('/'),
+            lastDir      = _.head(fileName) !== 'index.html' ? _.head(fileName) : '',
             lastFileName = _.isEmpty(lastDir) ? _.head(fileName) : _.last(fileName),
-            destPath = _.isEmpty(lastDir) ? path.ghPages : path.ghPages + '/' + lastDir;
+            destPath     = _.isEmpty(lastDir) ? path.ghPages : path.ghPages + '/' + lastDir;
         
         return stream
           .pipe($.rename('_' + lastFileName))
           .pipe($.htmlmin(htmlminOpt))
           .pipe(gulp.dest(destPath));
-      }));
+      })).on('close', function () {done()});
+    
   });
   
   gulp.task('rename:jekyllHtml', ['clean:ghPagesOriginHtml'], function () {
-    return gulp.src([path.ghPages + '/**/*.html', '!' + path.ghPages + '/examples/!**/!*.html'])
+    
+    gulp.src([path.ghPages + '/!**!/!*.html', '!' + path.ghPages + '/examples/!**!/!*.html'])
       .pipe($.foreach(function (stream, file) {
         var filePath = _.last(file.path.split(file.base)),
-          fileName = filePath.split('/'),
-          lastDir = _.head(fileName) !== '_index.html' ? _.head(fileName) : '',
-          destPath = _.isEmpty(lastDir) ? path.ghPages : path.ghPages + '/' + lastDir;
+          fileName   = filePath.split('/'),
+          lastDir    = _.head(fileName) !== '_index.html' ? _.head(fileName) : '',
+          destPath   = _.isEmpty(lastDir) ? path.ghPages : path.ghPages + '/' + lastDir;
 
         return stream
           .pipe($.rename('index.html'))
+          .pipe($.debug())
           .pipe(gulp.dest(destPath));
       }));
-  });
+    
+  });*/
   
   gulp.task('bootstrapJs', function () {
     runSequence('concat:bootstrapJs', 'minify:bootstrapJs');

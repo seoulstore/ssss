@@ -1,16 +1,17 @@
 (function () {
   'use strict';
   
-  var gulp = require('gulp'),
-      path = gulp.path,
-      watch = require('gulp-watch'),
-      bs = require('browser-sync'),
-      cp = require('child_process'),
+  var gulp     = require('gulp'),
+      watch    = require('gulp-watch'),
+      bs       = require('browser-sync'),
+      cp       = require('child_process'),
       gulpUtil = require('gulp-util'),
-      sass = require('gulp-sass'),
-      postcss = require('gulp-postcss');
+      sass     = require('gulp-sass'),
+      postcss  = require('gulp-postcss'),
+      path     = gulp.path;
   
   gulp.task('jekyll', ['watch'], function () {
+    
     var jekyll = cp.spawn('jekyll', ['build', '--watch', '--incremental', '--drafts']),
       jekyllLogger = function (buffer) {
         buffer.toString()
@@ -22,6 +23,7 @@
     
     jekyll.stdout.on('data', jekyllLogger);
     jekyll.stderr.on('data', jekyllLogger);
+    
   });
   
   gulp.task('serve', ['jekyll'],  function () {

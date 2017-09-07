@@ -45,5 +45,5 @@ module.exports = function generateRawFilesJs(grunt, banner) {
     gulpUtil.log(err);
   }
   // grunt.log.writeln('File ' + rawFilesJs.cyan + ' created.');
-  gulpUtil.log('File ' + rawFilesJs.cyan + ' created.');
+  gulpUtil.log('File ' + rawFilesJs + ' created.');
 };
