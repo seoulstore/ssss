@@ -1,10 +1,10 @@
-sudo: required
+#sudo: required
 language: node_js
 #group: deprecated-2017Q3
 #git:
 #  depth: 10
 node_js:
-  - 6
+- 6
 before_install:
   - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
     as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))'
@@ -22,11 +22,13 @@ before_script:
 after_success:
   - gulp prep-release
   #- npm run prep-release
-  # - "./deploy.sh"
-cache:
-  directories:
-  - node_modules
-  - vendor/bundle
+#   - "./deploy.sh"
+after_failure:
+- exit 1
+#cache:
+#  directories:
+#  - node_modules
+#  - vendor/bundle
 env:
   global:
   - NPM_CONFIG_PROGRESS="false"

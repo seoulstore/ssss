@@ -14,6 +14,7 @@
   "homepage": "http://getbootstrap.com",
   "author": "Twitter, Inc.",
   "scripts": {
+    "test" : "gulp -v"
     "sass-lint": "bundle exec scss-lint --config .scss-lint.yml scss/*.scss",
     "change-version": "node grunt/change-version.js",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
