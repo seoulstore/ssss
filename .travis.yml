@@ -12,8 +12,7 @@ before_install:
   - rvm install 2.2
   - rvm use 2.2 --fuzzy
   - gem install bundler
-  - gem install sass
-  - bundle update sass
+  #- gem install sass
 install:
   - bundle install --deployment --jobs=1
   #- cp grunt/npm-shrinkwrap.json ./
