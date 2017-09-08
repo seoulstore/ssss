@@ -11,7 +11,7 @@ before_install:
     "$PATH")
   - rvm install 2.4.1
   - rvm use 2.4.1 --fuzzy
-  - gem install bundler
+  - gem install bundler --pre
 install:
   - bundle install --deployment --jobs=1
   #- cp grunt/npm-shrinkwrap.json ./
