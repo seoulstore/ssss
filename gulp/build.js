@@ -165,7 +165,7 @@
     generateRawFiles();
   });
   
-  gulp.task('jekyll:build', function () {
+  gulp.task('jekyll:build', function (done) {
     
     var jekyll = cp.spawn('jekyll', ['build']),
         jekyllLogger = function (buffer) {
@@ -179,6 +179,7 @@
     jekyll.stdout.on('data', jekyllLogger);
     jekyll.stderr.on('data', jekyllLogger);
     
+    jekyll.on('close', done);
   });
   
   /*gulp.task('minify:jekyllHtml', function (done) {
