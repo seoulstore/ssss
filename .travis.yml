@@ -16,6 +16,7 @@ before_install:
 install:
   - bundle install --deployment --jobs=1
   #- cp grunt/npm-shrinkwrap.json ./
+  - npm i -g gulp
   - npm install
 before_script:
   - chmod +x ./deploy.sh
