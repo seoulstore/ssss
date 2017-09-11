@@ -88,7 +88,11 @@
       .pipe($.sassLint())
       .pipe($.sassLint.failOnError())
       // .pipe($.sass().on('error', $.sass.logError))
-      .pipe($.sass().on('error', sassError.gulpSassError(true)))
+      .pipe(
+        $.sass()
+          .on('error', sassError.gulpSassError(true))
+      )
+      .on('end', function () {process.exit(1);})
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
     
