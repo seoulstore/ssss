@@ -1,34 +1,27 @@
 {
-  "name": "bootstrap",
-  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "name": "ssss",
+  "description": "Seoulstore SSSS",
   "version": "3.3.7",
   "keywords": [
     "css",
-    "less",
+    "sass",
     "mobile-first",
     "responsive",
     "front-end",
     "framework",
     "web"
   ],
-  "homepage": "http://getbootstrap.com",
-  "author": "Twitter, Inc.",
-  "scripts": {
-    "test": "gulp -v",
-    "sass-lint": "bundle exec scss-lint --config .scss-lint.yml scss/*.scss",
-    "change-version": "node grunt/change-version.js",
-    "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
-    "prep-release": "grunt prep-release"
-  },
+  "homepage": "http://ssss.seoulstore.com/",
+  "author": "Seoulstore Development Team",
   "style": "dist/css/bootstrap.css",
   "sass": "scss/bootstrap.scss",
   "main": "./dist/js/npm",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twbs/bootstrap.git"
+    "url": "https://github.com/seoulstore/ssss.git"
   },
   "bugs": {
-    "url": "https://github.com/twbs/bootstrap/issues"
+    "url": "https://github.com/seoulstore/ssss/issues"
   },
   "license": "MIT",
   "devDependencies": {
@@ -92,28 +85,6 @@
   },
   "engines": {
     "node": ">=0.10.1"
-  },
-  "files": [
-    "dist",
-    "fonts",
-    "grunt",
-    "js/*.js",
-    "scss/bootstrap.scss",
-    "Gruntfile.js",
-    "LICENSE"
-  ],
-  "jspm": {
-    "main": "js/bootstrap",
-    "shim": {
-      "js/bootstrap": {
-        "deps": "jquery",
-        "exports": "$"
-      }
-    },
-    "files": [
-      "css",
-      "fonts",
-      "js"
-    ]
   }
+
 }
