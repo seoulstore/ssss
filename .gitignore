@@ -3,6 +3,7 @@ _gh_pages
 _site
 .ruby-version
 .sass-cache
+.bundle
 
 # Numerous always-ignore extensions
 *.diff
@@ -41,3 +42,4 @@ docs/.jekyll-metadata
 bower_components
 node_modules
 vendor
+CNAME

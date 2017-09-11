@@ -199,7 +199,7 @@ module.exports = function (grunt) {
       },
       docs: {
         src: [
-          'docs/assets/css/ie10-viewport-bug-workaround.css',
+          'docs/assets/css/src/ie10-viewport-bug-workaround.css',
           'docs/assets/css/src/pygments-manni.css',
           'docs/assets/css/src/docs.css'
         ],

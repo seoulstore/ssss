@@ -23,7 +23,7 @@ GEM
       jekyll (~> 3.3)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
-    kramdown (1.14.0)
+    kramdown (1.15.0)
     liquid (4.0.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -32,16 +32,16 @@ GEM
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.0)
-    rake (12.0.0)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rouge (1.11.1)
     safe_yaml (1.0.4)
-    sass (3.4.25)
-    scss_lint (0.54.0)
-      rake (>= 0.9, < 13)
-      sass (~> 3.4.20)
+    sass (3.5.1)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
 
 PLATFORMS
   ruby
@@ -49,7 +49,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.5.1)
   jekyll-sitemap (~> 1.1.1)
-  scss_lint (~> 0.54.0)
+  sass (~> 3.5.1)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.2
