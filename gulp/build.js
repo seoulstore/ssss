@@ -5,6 +5,7 @@
       autoprefixer     = require('autoprefixer'),
       $                = require('gulp-load-plugins')(),
       sassError        = require('gulp-sass-error'),
+      gulpUtil         = require('gulp-util'),
       _                = require('lodash'),
       fs               = require('fs'),
       cp               = require('child_process'),
@@ -42,6 +43,15 @@
         fileName = filePath[1];
     
     return fileName;
+  }
+  
+  function handleError (error) {
+    gulpUtil.log(error.message);
+    process.exit(1);
+  }
+  
+  function onError (error) {
+    handleError.call(this, error);
   }
   
   gulp.task('concat:docsjs', function () {
@@ -88,11 +98,11 @@
       .pipe($.sassLint())
       .pipe($.sassLint.failOnError())
       // .pipe($.sass().on('error', $.sass.logError))
-      .pipe(
-        $.sass()
-          .on('error', sassError.gulpSassError(true))
-          .on('end', function() { process.exit(1); })
-      )
+      // .pipe(
+      //   $.sass()
+      //     .on('error', sassError.gulpSassError(true))
+      // )
+      .pipe($.sass()).on('error', onError)
       
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
