@@ -182,41 +182,6 @@
     jekyll.on('close', done);
   });
   
-  /*gulp.task('minify:jekyllHtml', function (done) {
-    
-    gulp.src([path.ghPages + '/!**!/!*.html', '!' + path.ghPages + '/examples/!**!/!*.html'])
-      .pipe($.foreach(function (stream, file) {
-        var filePath     = _.last(file.path.split(file.base)),
-            fileName     = filePath.split('/'),
-            lastDir      = _.head(fileName) !== 'index.html' ? _.head(fileName) : '',
-            lastFileName = _.isEmpty(lastDir) ? _.head(fileName) : _.last(fileName),
-            destPath     = _.isEmpty(lastDir) ? path.ghPages : path.ghPages + '/' + lastDir;
-        
-        return stream
-          .pipe($.rename('_' + lastFileName))
-          .pipe($.htmlmin(htmlminOpt))
-          .pipe(gulp.dest(destPath));
-      })).on('close', function () {done()});
-    
-  });
-  
-  gulp.task('rename:jekyllHtml', ['clean:ghPagesOriginHtml'], function () {
-    
-    gulp.src([path.ghPages + '/!**!/!*.html', '!' + path.ghPages + '/examples/!**!/!*.html'])
-      .pipe($.foreach(function (stream, file) {
-        var filePath = _.last(file.path.split(file.base)),
-          fileName   = filePath.split('/'),
-          lastDir    = _.head(fileName) !== '_index.html' ? _.head(fileName) : '',
-          destPath   = _.isEmpty(lastDir) ? path.ghPages : path.ghPages + '/' + lastDir;
-
-        return stream
-          .pipe($.rename('index.html'))
-          .pipe($.debug())
-          .pipe(gulp.dest(destPath));
-      }));
-    
-  });*/
-  
   gulp.task('bootstrapJs', function () {
     runSequence('concat:bootstrapJs', 'minify:bootstrapJs');
   });
