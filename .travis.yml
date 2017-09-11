@@ -6,6 +6,7 @@ node_js:
 before_install:
   - rvm install 2.4.1
   - rvm use 2.4.1 --fuzzy
+  - ruby -v
   - gem install jekyll
   - gem install bundler --pre
 
