@@ -21,7 +21,7 @@ before_script:
   - chmod +x ./deploy.sh
 
 after_success:
-  - gulp prep-release
+  - gulp build
   - ./deploy.sh
 
 after_failure:
