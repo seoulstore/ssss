@@ -16,6 +16,7 @@ install:
 
 before_script:
   - chmod +x ./deploy.sh
+  - kramdown -v
   - gulp build
 
 after_success:
