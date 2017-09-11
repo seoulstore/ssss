@@ -91,8 +91,9 @@
       .pipe(
         $.sass()
           .on('error', sassError.gulpSassError(true))
+          .on('end', function() { process.exit(1); })
       )
-      .on('end', function () {process.exit(1);})
+      
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
     
