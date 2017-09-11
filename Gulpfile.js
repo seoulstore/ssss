@@ -23,7 +23,7 @@
     runSequence('concat:docsCss', 'concat:docsjs', 'concat:customizerjs', 'generateGlyphiconsData', 'generateRawFiles', 'pug');
   });
   
-  gulp.task('build', function () {
+  gulp.task('build', function (done) {
     runSequence(
       'clean:dist',
       'clean:ghPages',
@@ -38,7 +38,16 @@
       'generateGlyphiconsData',
       'generateRawFiles',
       'pug',
-      'jekyll:build'
+      'jekyll:build'/*,
+      
+      function (err) {
+        if (err) {
+          console.log('[ERROR] gulp build task failed', err);
+          console.log('[FAIL] gulp build task failed - exiting with code 1');
+          return process.exit(1);
+        }
+      }*/
+      
     );
   });
   
