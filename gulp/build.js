@@ -86,7 +86,7 @@
     return gulp.src(path.scss + '/**/*.scss')
       .pipe($.sassLint())
       .pipe($.sassLint.failOnError())
-      .pipe($.sass().on('error', $.sass.logError))
+      .pipe($.sass().on('error', $.sass.logError)).on('end', function () { process.exit(1); })
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
     
@@ -235,10 +235,6 @@
   
   gulp.task('jekyllHtmlMin', function () {
     runSequence('minify:jekyllHtml', 'rename:jekyllHtml', 'clean:ghPagesCustomHtml');
-  });
-  
-  gulp.task('build', function () {
-    runSequence('jekyll:build', 'jekyllHtmlMin');
   });
   
 })();

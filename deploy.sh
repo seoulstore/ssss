@@ -20,8 +20,7 @@ grunt Gruntfile.js .hound.yml ISSUE_TEMPLATE.md js \
 npm-shrinkwrap.json nuget package.js package.json \
 package-lock.json .sass-cache docs \
 scss .editorconfig .eslintrc.json \
-.gitattributes .gitignore .scss-lint.yml \
-.travis.yml Gulpfile.js LICENSE README.md .bundle || exit 1
+.scss-lint.yml .travis.yml Gulpfile.js LICENSE README.md .bundle || exit 1
 
 cp -a _gh_pages/* ./ || exit 1
 rm -rf _gh_pages || exit 1

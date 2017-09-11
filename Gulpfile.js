@@ -23,7 +23,7 @@
     runSequence('concat:docsCss', 'concat:docsjs', 'concat:customizerjs', 'generateGlyphiconsData', 'generateRawFiles', 'pug');
   });
   
-  gulp.task('prep-release', function () {
+  gulp.task('build', function () {
     runSequence(
       'clean:dist',
       'clean:ghPages',
