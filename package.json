@@ -14,7 +14,7 @@
   "homepage": "http://getbootstrap.com",
   "author": "Twitter, Inc.",
   "scripts": {
-    "test" : "gulp -v",
+    "test": "gulp -v",
     "sass-lint": "bundle exec scss-lint --config .scss-lint.yml scss/*.scss",
     "change-version": "node grunt/change-version.js",
     "update-shrinkwrap": "npm shrinkwrap --dev && shx mv ./npm-shrinkwrap.json ./grunt/npm-shrinkwrap.json",
@@ -74,6 +74,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-sass-error": "^1.0.5",
     "gulp-sass-lint": "^1.3.3",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
@@ -114,6 +115,5 @@
       "fonts",
       "js"
     ]
-  },
-  "dependencies": {}
+  }
 }

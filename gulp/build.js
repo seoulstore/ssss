@@ -4,6 +4,7 @@
   var gulp             = require('gulp'),
       autoprefixer     = require('autoprefixer'),
       $                = require('gulp-load-plugins')(),
+      sassError        = require('gulp-sass-error'),
       _                = require('lodash'),
       fs               = require('fs'),
       cp               = require('child_process'),
@@ -86,7 +87,8 @@
     return gulp.src(path.scss + '/**/*.scss')
       .pipe($.sassLint())
       .pipe($.sassLint.failOnError())
-      .pipe($.sass().on('error', $.sass.logError)).on('end', function () { process.exit(1); })
+      // .pipe($.sass().on('error', $.sass.logError))
+      .pipe($.sass().on('error', sassError.gulpSassError(true)))
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
     
