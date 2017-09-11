@@ -16,7 +16,7 @@ echo "Remove"
 rm -rf \
 bower.json CHANGELOG.md composer.json _config.yml \
 CONTRIBUTING.md deploy.sh fonts Gemfile Gemfile.lock \
-grunt Gruntfile.js .hound.yml ISSUE_TEMPLATE.md js \
+gulp .hound.yml ISSUE_TEMPLATE.md js \
 npm-shrinkwrap.json nuget package.js package.json \
 package-lock.json .sass-cache docs \
 scss .editorconfig .eslintrc.json \
