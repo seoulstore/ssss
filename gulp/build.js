@@ -89,10 +89,10 @@
       // .pipe($.sass().on('error', $.sass.logError))
       .pipe(
         $.sass()
-          // .on('error', $.sassError.gulpSassError(true)).on('end', function () { return process.exit(1) })
-          .on('error', function (error) {
-            done(error);
-          })
+          .on('error', $.sassError.gulpSassError(true))
+          // .on('error', function (error) {
+          //   done(error);
+          // })
       )
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));

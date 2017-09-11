@@ -19,9 +19,10 @@ install:
 
 before_script:
   - chmod +x ./deploy.sh
+  - gulp build
 
 after_success:
-  - gulp build
+#  - gulp build
   - ./deploy.sh
 
 after_failure:
