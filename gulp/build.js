@@ -81,19 +81,13 @@
     
   });
   
-  gulp.task('concat:bootstrapCss', function (done) {
+  gulp.task('concat:bootstrapCss', function () {
     
     return gulp.src(path.scss + '/**/*.scss')
       .pipe($.sassLint())
       .pipe($.sassLint.failOnError())
-      // .pipe($.sass().on('error', $.sass.logError))
-      .pipe(
-        $.sass()
-          .on('error', $.sassError.gulpSassError(true))
-          // .on('error', function (error) {
-          //   done(error);
-          // })
-      )
+      .pipe($.sass().on('error', $.sass.logError))
+      // .pipe($.sass().on('error', $.sassError.gulpSassError(true)))
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
     

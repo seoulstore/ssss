@@ -4,9 +4,6 @@ node_js:
 - 6
 
 before_install:
-#  - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict
-#    as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))'
-#    "$PATH")
   - rvm install 2.4.1
   - rvm use 2.4.1 --fuzzy
   - gem install jekyll
@@ -22,7 +19,6 @@ before_script:
   - gulp build
 
 after_success:
-#  - gulp build
   - ./deploy.sh
 
 after_failure:
