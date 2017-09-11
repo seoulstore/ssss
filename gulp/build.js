@@ -53,8 +53,8 @@
       ])
       .pipe($.eslint())
       .pipe($.eslint.format())
-      .pipe($.eslint.failAfterError())
-      .pipe($.concat('docs.min.js'))
+      .pipe($.eslint.failOnError())
+      .pipe($.concat('docs.min.js').on('error', $.util.log))
       .pipe($.uglify({ output: { quote_style: 1 }}).on('error', $.util.log))
       .pipe(gulp.dest(path.assets + '/js'));
     
@@ -74,8 +74,8 @@
       ])
       .pipe($.eslint())
       .pipe($.eslint.format())
-      .pipe($.eslint.failAfterError())
-      .pipe($.concat('customize.min.js'))
+      .pipe($.eslint.failOnError())
+      .pipe($.concat('customize.min.js').on('error', $.util.log))
       .pipe($.uglify({ output: { quote_style: 1 }}).on('error', $.util.log))
       .pipe(gulp.dest(path.assets + '/js'));
     
@@ -86,8 +86,7 @@
     return gulp.src(path.scss + '/**/*.scss')
       .pipe($.sassLint())
       .pipe($.sassLint.failOnError())
-      .pipe($.sass().on('error', $.sass.logError))
-      // .pipe($.sass().on('error', $.sassError.gulpSassError(true)))
+      .pipe($.sass().on('error', $.sassError.gulpSassError(true)))
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
     
@@ -96,7 +95,7 @@
   gulp.task('minify:bootstrapCss', function () {
     
     return gulp.src(path.scss + '/**/*.scss')
-      .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
+      .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sassError.gulpSassError(true)))
       .pipe($.rename('bootstrap.min.css'))
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
@@ -108,8 +107,8 @@
     return gulp.src([path.root + 'js/*.js', '!' + path.root + 'js/tests'])
       .pipe($.eslint())
       .pipe($.eslint.format())
-      .pipe($.eslint.failAfterError())
-      .pipe($.concat('bootstrap.js'))
+      .pipe($.eslint.failOnError())
+      .pipe($.concat('bootstrap.js').on('error', $.util.log))
       .pipe(gulp.dest(path.dist + '/js'));
     
   });
@@ -117,7 +116,7 @@
   gulp.task('minify:bootstrapJs', function () {
     
     return gulp.src([path.dist + '/js/bootstrap.js'])
-      .pipe($.uglify())
+      .pipe($.uglify().on('error', $.util.log))
       .pipe($.rename('bootstrap.min.js'))
       .pipe(gulp.dest(path.dist + '/js'));
 
@@ -126,7 +125,7 @@
   gulp.task('concat:docsCss', function () {
     
     return gulp.src(path.assets + '/css/src/*.css')
-      .pipe($.concat('docs.min.css'))
+      .pipe($.concat('docs.min.css').on('error', $.util.log))
       .pipe(gulp.dest(path.assets + '/css'));
       // .pipe($.debug({showFiles: true}));
     

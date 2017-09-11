@@ -6,6 +6,7 @@
       sassLint     = require('gulp-sass-lint'),
       postcss      = require('gulp-postcss'),
       debug        = require('gulp-debug'),
+      sassError    = require('gulp-sass-error'),
       autoprefixer = require('autoprefixer'),
       watch        = require('gulp-watch'),
       path         = gulp.path;
@@ -17,7 +18,7 @@
       return gulp.src([path.scss + '/**/*.scss'])
         .pipe(sassLint())
         .pipe(sassLint.failOnError())
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sassError.gulpSassError(true)))
         .pipe(postcss([autoprefixer()]))
         .pipe(debug())
         .pipe(gulp.dest(path.docs + '/dist/css'));

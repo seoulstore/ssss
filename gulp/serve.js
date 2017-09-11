@@ -6,7 +6,6 @@
       bs       = require('browser-sync'),
       cp       = require('child_process'),
       gulpUtil = require('gulp-util'),
-      sass     = require('gulp-sass'),
       postcss  = require('gulp-postcss'),
       path     = gulp.path;
   
