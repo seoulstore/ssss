@@ -1,12 +1,39 @@
-# [Bootstrap](http://getbootstrap.com)
+# SSSS (Seoul Store Style Sheet)
 
-[![Slack](https://bootstrap-slack.herokuapp.com/badge.svg)](https://bootstrap-slack.herokuapp.com)
-![Bower version](https://img.shields.io/bower/v/bootstrap.svg)
-[![npm version](https://img.shields.io/npm/v/bootstrap.svg)](https://www.npmjs.com/package/bootstrap)
-[![Build Status](https://img.shields.io/travis/twbs/bootstrap/master.svg)](https://travis-ci.org/twbs/bootstrap)
-[![devDependency Status](https://img.shields.io/david/dev/twbs/bootstrap.svg)](https://david-dm.org/twbs/bootstrap#info=devDependencies)
-[![NuGet](https://img.shields.io/nuget/v/bootstrap.svg)](https://www.nuget.org/packages/Bootstrap)
-[![Selenium Test Status](https://saucelabs.com/browser-matrix/bootstrap.svg)](https://saucelabs.com/u/bootstrap)
+[![Build Status](https://travis-ci.org/seoulstore/ssss.svg?branch=master)](https://travis-ci.org/seoulstore/ssss)
+[![devDependencies Status](https://david-dm.org/seoulstore/ssss/dev-status.svg)](https://david-dm.org/seoulstore/ssss?type=dev)
+ 
+### 준비물
+
+* Ruby 2.4.1
+* Bundler 1.16.0
+* gulp
+
+### 개발방법
+
+CSS 수정은 가급적 변수를 변경하세요. 만약 직접 수정해야 한다면 scss 디렉토리에서 시작하면 됩니다.
+_gh_pages 디렉터리는 github.io의 정적 웹의 베이스가 될 디렉터리입니다.
+* `gulp serve`
+  * scss watch
+  * jekyll build
+  * browser sync
+  * 개발시 사용하세요.
+  
+* `gulp build`
+  * 지킬을 이용한 정적 웹을 만듭니다.
+  * 컨캣, 미니파이, 어글리파이 등등
+  * docs 디렉터리를 베이스로 _gh_page 디렉터리를 만들어요.
+
+
+### Changelogs 
+
+* 문서는 master의 docs 디렉토리를 보도록 변경
+* ssss.seoulstore.com CNAME 레코드 추가
+* gulp (watch, jekyll build, browser sync) 추가 (2017-09-11 [scjang](https://github.com/scjang))
+
+
+
+# Bootstrap
 
 Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development, created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thornton](https://twitter.com/fat), and maintained by the [core team](https://github.com/orgs/twbs/people) with the massive support and involvement of the community.
 
