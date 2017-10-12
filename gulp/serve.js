@@ -28,6 +28,7 @@
   gulp.task('serve', ['jekyll'],  function () {
     
     bs.init({
+      port: 7000,
       server: {
         baseDir: path.ghPages
       }
