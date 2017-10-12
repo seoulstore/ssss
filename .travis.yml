@@ -10,7 +10,8 @@ before_install:
   - gem install bundler --pre
 
 install:
-  - bundle install --deployment --jobs=1
+#  - bundle install --deployment --jobs=1
+  - bundle install
   - npm i -g gulp
   - npm install
 
