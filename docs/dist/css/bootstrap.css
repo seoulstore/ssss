@@ -3746,26 +3746,27 @@ tbody.collapse.in {
       border: 1px solid transparent;
       background-color: #f9f9f9; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-      color: #666666;
+      color: #333333;
       background-color: #fff;
       border-top: 2px solid #333333;
       border-bottom-color: transparent;
       cursor: default; }
 
-.nav-tabs-reverse {
-  border-bottom: 1px solid #f9f9f9; }
-  .nav-tabs-reverse > li {
-    float: left;
-    margin-bottom: -1px; }
-    .nav-tabs-reverse > li > a {
-      color: #999999;
-      font-weight: 900;
-      line-height: 2.1; }
-    .nav-tabs-reverse > li.active > a, .nav-tabs-reverse > li.active > a:hover, .nav-tabs-reverse > li.active > a:focus {
-      color: #666666;
-      border-bottom: 2px solid #333333;
-      border-top-color: transparent;
-      cursor: default; }
+.nav-tabs-reverse > li {
+  float: left;
+  margin-bottom: -1px; }
+  .nav-tabs-reverse > li > a {
+    color: #999999;
+    font-weight: 900;
+    line-height: 2.1; }
+    .nav-tabs-reverse > li > a:hover, .nav-tabs-reverse > li > a:focus {
+      border-bottom: 2px solid #f9f9f9; }
+  .nav-tabs-reverse > li.active > a, .nav-tabs-reverse > li.active > a:hover, .nav-tabs-reverse > li.active > a:focus {
+    color: #333333;
+    background-color: #fff;
+    border-bottom: 2px solid #333333;
+    border-top-color: transparent;
+    cursor: default; }
 
 .nav-pills > li {
   float: left; }
