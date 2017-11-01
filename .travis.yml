@@ -6,11 +6,10 @@ node_js:
 before_install:
   - rvm install 2.4.1
   - rvm use 2.4.1
-  - gem install jekyll
   - gem install bundler --pre
 
 install:
-  - bundle install --deployment --jobs=1
+  - bundle install
   - npm i -g gulp
   - npm install
 

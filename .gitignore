@@ -30,6 +30,7 @@ _site
 *.sublime-workspace
 nbproject
 Thumbs.db
+Gemfile.lock
 
 # Komodo
 .komodotools
