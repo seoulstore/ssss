@@ -3,4 +3,4 @@
 # Allow crawling of all content
 User-agent: *
 Disallow:
-Sitemap: http://0.0.0.0:9001/dist/sitemap.xml
+Sitemap: http://ssss.seoulstore.com/dist/sitemap.xml

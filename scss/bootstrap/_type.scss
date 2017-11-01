@@ -1,15 +1,15 @@
 // 
 // Webfont
 // ------------------------------------------------------
-@at-root {
-  // Import the fonts
-  @font-face {
-    font-family: "Noto Sans KR";
-    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.woff2'), '#{$type-font-path}#{$type-font-name}.woff2')) format('woff2'),
-         url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.woff'), '#{$type-font-path}#{$type-font-name}.woff')) format('woff'),
-         url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.ttf'), '#{$type-font-path}#{$type-font-name}.otf')) format('opentype');
-  }
-}
+// @at-root {
+//   // Import the fonts
+//   @font-face {
+//     font-family: "Noto Sans KR";
+//     src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.woff2'), '#{$type-font-path}#{$type-font-name}.woff2')) format('woff2'),
+//          url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.woff'), '#{$type-font-path}#{$type-font-name}.woff')) format('woff'),
+//          url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.ttf'), '#{$type-font-path}#{$type-font-name}.otf')) format('opentype');
+//   }
+// }
 //
 // Typography
 // --------------------------------------------------
