@@ -114,6 +114,7 @@ mark,
 .text-muted {
   color: $text-muted;
 }
+@include text-emphasis-variant('.text-dark', $brand-dark);
 
 @include text-emphasis-variant('.text-primary', $brand-primary);
 
