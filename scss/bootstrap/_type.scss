@@ -1,15 +1,15 @@
 // 
 // Webfont
 // ------------------------------------------------------
-@at-root {
-  // Import the fonts
-  @font-face {
-    font-family: "Noto Sans KR";
-    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.woff2'), '#{$type-font-path}#{$type-font-name}.woff2')) format('woff2'),
-         url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.woff'), '#{$type-font-path}#{$type-font-name}.woff')) format('woff'),
-         url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.ttf'), '#{$type-font-path}#{$type-font-name}.otf')) format('opentype');
-  }
-}
+// @at-root {
+//   // Import the fonts
+//   @font-face {
+//     font-family: "Noto Sans KR";
+//     src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.woff2'), '#{$type-font-path}#{$type-font-name}.woff2')) format('woff2'),
+//          url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.woff'), '#{$type-font-path}#{$type-font-name}.woff')) format('woff'),
+//          url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$type-font-path}#{$type-font-name}.ttf'), '#{$type-font-path}#{$type-font-name}.otf')) format('opentype');
+//   }
+// }
 //
 // Typography
 // --------------------------------------------------
@@ -114,6 +114,7 @@ mark,
 .text-muted {
   color: $text-muted;
 }
+@include text-emphasis-variant('.text-dark', $brand-dark);
 
 @include text-emphasis-variant('.text-primary', $brand-primary);
 
@@ -125,14 +126,28 @@ mark,
 
 @include text-emphasis-variant('.text-danger', $state-danger-text);
 
+// Contextual Sizes
+.text-lg {
+  font-size: 16px;
+}
+
+// Contextual Weights
+@include text-weight-variant('.text-medium', 500);
+@include text-weight-variant('.text-demi-bold', 600);
+@include text-weight-variant('.text-bold', 700);
+@include text-weight-variant('.text-ultra-bold', 800);
+@include text-weight-variant('.text-heavy', 900);
+
 // Contextual backgrounds
 // For now we'll leave these alongside the text classes until v4 when we can
 // safely shift things around (per SemVer rules).
-.bg-primary {
+.bg-primary, .bg-dark {
   // Given the contrast here, this is the only class to have its color inverted
   // automatically.
   color: #fff;
 }
+@include bg-variant('.bg-dark', $brand-dark);
+
 @include bg-variant('.bg-primary', $brand-primary);
 
 @include bg-variant('.bg-success', $state-success-bg);

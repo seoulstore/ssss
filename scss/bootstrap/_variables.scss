@@ -11,11 +11,13 @@ $bootstrap-sass-asset-helper: false !default;
 $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
-$gray:                   lighten($gray-base, 33.5%) !default; // #555
-$gray-light:             lighten($gray-base, 60%) !default; // #777
-$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+$gray:                   lighten($gray-base, 40%) !default; // #666
+$gray-light:             lighten($gray-base, 60%) !default; // #999
+// ccc, ddd, eee는 직접 타이핑 할 것
+$gray-lighter:           lighten(#000000, 97.65) !default; // #f9f9f9
 
-$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+$brand-dark:            $gray-dark !default;
+$brand-primary:         #F70061 !default;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
@@ -43,31 +45,31 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  "Apple SD Gothic Neo", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
 $font-size-base:          12px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-large:         ceil(($font-size-base * 1.33)) !default; // ~16px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~10px
 
-$font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
-$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
-$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~21px
-$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-h5:            $font-size-base !default;
-$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-h1:            floor(($font-size-base * 3)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 2.5)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 2)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.5)) !default; // ~18px
+$font-size-h5:            ceil(($font-size-base * 1.16)) !default; // 14px
+$font-size-h6:            $font-size-base !default; // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
-$line-height-base:        1.428571429 !default; // 20/14
+$line-height-base:        1.5 !default; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
 
 //** By default, this inherits from the `<body>`.
 $headings-font-family:    inherit !default;
-$headings-font-weight:    500 !default;
+$headings-font-weight:    900 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
 
@@ -106,11 +108,11 @@ $padding-small-horizontal:  10px !default;
 $padding-xs-vertical:       1px !default;
 $padding-xs-horizontal:     5px !default;
 
-$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
-$line-height-small:         1.5 !default;
+$line-height-large:         1.3 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.1 !default;
 
 $border-radius-base:        4px !default;
-$border-radius-large:       8px !default;
+$border-radius-large:       4px !default;
 $border-radius-small:       3px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -149,11 +151,19 @@ $table-border-color:            #ddd !default;
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-font-weight:                normal !default;
+$btn-font-weight:                900 !default;
 
 $btn-default-color:              #333 !default;
 $btn-default-bg:                 #fff !default;
 $btn-default-border:             #ccc !default;
+
+$btn-dark-color:              #333 !default;
+$btn-dark-bg:                 #fff !default;
+$btn-dark-border:             #333 !default;
+
+$btn-reverse-color:              #fff !default;
+$btn-reverse-bg:                 $gray-dark !default;
+$btn-reverse-border:             darken($btn-reverse-bg, 5%) !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -174,6 +184,9 @@ $btn-warning-border:             darken($btn-warning-bg, 5%) !default;
 $btn-danger-color:               #fff !default;
 $btn-danger-bg:                  $brand-danger !default;
 $btn-danger-border:              darken($btn-danger-bg, 5%) !default;
+
+$btn-disabled-color:             #ddd !default;
+$btn-disabled-border:            #ddd !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -231,7 +244,7 @@ $input-group-addon-bg:           $gray-lighter !default;
 $input-group-addon-border-color: $input-border !default;
 
 //** Disabled cursor for form controls and buttons.
-$cursor-disabled:                not-allowed !default;
+$cursor-disabled:                initial !default;
 
 
 //== Dropdowns
@@ -331,7 +344,7 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 //** Number of columns in the grid.
 $grid-columns:              12 !default;
 //** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         10px !default;
+$grid-gutter-width:         20px !default;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint:     $screen-sm-min !default;
@@ -433,13 +446,15 @@ $nav-disabled-link-color:                   $gray-light !default;
 $nav-disabled-link-hover-color:             $gray-light !default;
 
 //== Tabs
-$nav-tabs-border-color:                     #ddd !default;
-
+$nav-tabs-link-hover-bg:                    $gray-lighter !default;
+$nav-tabs-link-color:                       $gray-light !default;
+$nav-tabs-border-color:                     $gray-lighter !default;
 $nav-tabs-link-hover-border-color:          $gray-lighter !default;
 
+
 $nav-tabs-active-link-hover-bg:             $body-bg !default;
-$nav-tabs-active-link-hover-color:          $gray !default;
-$nav-tabs-active-link-hover-border-color:   #ddd !default;
+$nav-tabs-active-link-hover-color:          $gray-dark !default;
+$nav-tabs-active-link-hover-border-color:   $gray-dark !default;
 
 $nav-tabs-justified-link-border-color:            #ddd !default;
 $nav-tabs-justified-active-link-border-color:     $body-bg !default;

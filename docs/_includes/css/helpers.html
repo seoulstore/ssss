@@ -4,6 +4,7 @@
   <h3 id="helper-classes-colors">Contextual colors</h3>
   <p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
   <div class="bs-example" data-example-id="contextual-colors-helpers">
+    <p class="text-dark">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
     <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
     <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
     <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
@@ -12,6 +13,7 @@
     <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
   </div>
 {% highlight html %}
+<p class="text-dark">...</p>
 <p class="text-muted">...</p>
 <p class="text-primary">...</p>
 <p class="text-success">...</p>
@@ -28,9 +30,34 @@
     <p>Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (the contextual colors are only used to reinforce meaning that is already present in the text/markup), or is included through alternative means, such as additional text hidden with the <code>.sr-only</code> class.</p>
   </div>
 
+  <h3 id="helper-classes-colors">Contextual Size</h3>
+  <div class="bs-example" data-example-id="contextual-colors-helpers">
+    <p class="text-lg">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+  </div>
+{% highlight html %}
+<p class="text-lg">...</p>
+{% endhighlight %}
+  
+  <h3 id="helper-classes-colors">Contextual Weights</h3>
+  <div class="bs-example" data-example-id="contextual-colors-helpers">
+    <p class="text-medium">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+    <p class="text-demi-bold">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    <p class="text-bold">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+    <p class="text-ultra-bold">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <p class="text-heavy">Etiam porta sem malesuada magna mollis euismod.</p>
+  </div>
+{% highlight html %}
+<p class="text-medium">...</p>
+<p class="text-demi-bold">...</p>
+<p class="text-bold">...</p>
+<p class="text-ultra-bold">...</p>
+<p class="text-heavy">...</p>
+{% endhighlight %}
+
   <h3 id="helper-classes-backgrounds">Contextual backgrounds</h3>
   <p>Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.</p>
   <div class="bs-example bs-example-bg-classes" data-example-id="contextual-backgrounds-helpers">
+    <p class="bg-dark">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
     <p class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
     <p class="bg-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
     <p class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
@@ -38,6 +65,7 @@
     <p class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
   </div>
 {% highlight html %}
+<p class="bg-dark">...</p>
 <p class="bg-primary">...</p>
 <p class="bg-success">...</p>
 <p class="bg-info">...</p>

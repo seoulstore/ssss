@@ -47,6 +47,7 @@
   &[disabled],
   fieldset[disabled] & {
     cursor: $cursor-disabled;
+    @include button-variant($btn-disabled-color, #999, $btn-disabled-border);
     @include opacity(.65);
     @include box-shadow(none);
   }
@@ -67,6 +68,18 @@ a.btn {
 
 .btn-default {
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    @include button-variant($btn-disabled-color, $btn-default-bg, $btn-disabled-border);
+  }
+}
+.btn-dark {
+  @include button-variant($btn-dark-color, $btn-dark-bg, $btn-dark-border);  
+}
+.btn-reverse {
+  @include button-variant($btn-reverse-color, $btn-reverse-bg, $btn-reverse-border);
 }
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);

@@ -58,7 +58,8 @@
 
 // Button sizes
 @mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  padding: $padding-vertical $padding-horizontal;
+  // 애플고딕 높이가 애매함
+  padding: $padding-vertical + 1 $padding-horizontal $padding-vertical - 1;
   font-size: $font-size;
   line-height: $line-height;
   border-radius: $border-radius;

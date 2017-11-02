@@ -10,3 +10,10 @@
     color: darken($color, 10%);
   }
 }
+
+// [converter] $parent hack
+@mixin text-weight-variant($parent, $weight) {
+  #{$parent} {
+    font-weight: $weight;
+  }
+}
