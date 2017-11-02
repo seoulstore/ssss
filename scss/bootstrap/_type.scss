@@ -125,6 +125,18 @@ mark,
 
 @include text-emphasis-variant('.text-danger', $state-danger-text);
 
+// Contextual Sizes
+.text-lg {
+  font-size: 16px;
+}
+
+// Contextual Weights
+@include text-weight-variant('.text-medium', 500);
+@include text-weight-variant('.text-demi-bold', 600);
+@include text-weight-variant('.text-bold', 700);
+@include text-weight-variant('.text-ultra-bold', 800);
+@include text-weight-variant('.text-heavy', 900);
+
 // Contextual backgrounds
 // For now we'll leave these alongside the text classes until v4 when we can
 // safely shift things around (per SemVer rules).
