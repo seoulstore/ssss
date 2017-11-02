@@ -1313,12 +1313,14 @@ h1[id] {
   background-color: #f9f9f9;
   border: 1px solid #fff;
 }
-.bs-glyphicons .glyphicon {
+.bs-glyphicons .glyphicon,
+.bs-glyphicons .scon {
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: 24px;
 }
-.bs-glyphicons .glyphicon-class {
+.bs-glyphicons .glyphicon-class,
+.bs-glyphicons .scon-class {
   display: block;
   text-align: center;
   word-wrap: break-word; /* Help out IE10+ with class names */

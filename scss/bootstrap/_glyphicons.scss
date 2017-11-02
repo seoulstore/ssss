@@ -18,19 +18,34 @@
          url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.ttf'), '#{$icon-font-path}#{$icon-font-name}.ttf')) format('truetype'),
          url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.svg##{$icon-font-svg-id}'), '#{$icon-font-path}#{$icon-font-name}.svg##{$icon-font-svg-id}')) format('svg');
   }
+
+  @font-face {
+    font-family: 'scon';
+    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$scon-font-path}#{$scon-font-name}.eot'), '#{$scon-font-path}#{$scon-font-name}.eot'));
+    src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$scon-font-path}#{$scon-font-name}.eot?#iefix'), '#{$scon-font-path}#{$scon-font-name}.eot?#iefix')) format('embedded-opentype'),
+         url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$scon-font-path}#{$scon-font-name}.woff2'), '#{$scon-font-path}#{$scon-font-name}.woff2')) format('woff2'),
+         url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$scon-font-path}#{$scon-font-name}.woff'), '#{$scon-font-path}#{$scon-font-name}.woff')) format('woff'),
+         url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$scon-font-path}#{$scon-font-name}.ttf'), '#{$scon-font-path}#{$scon-font-name}.ttf')) format('truetype'),
+         url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$scon-font-path}#{$scon-font-name}.svg##{$scon-font-svg-id}'), '#{$scon-font-path}#{$scon-font-name}.svg##{$scon-font-svg-id}')) format('svg');
+  }
 }
 
 // Catchall baseclass
-.glyphicon {
+.glyphicon, .scon {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon {
+  font-family: 'Glyphicons Halflings';
+}
+.scon {
+  font-family: 'scon';
 }
 
 // Individual icons
@@ -305,3 +320,42 @@
 .glyphicon-menu-right             { &:before { content: "\e258"; } }
 .glyphicon-menu-down              { &:before { content: "\e259"; } }
 .glyphicon-menu-up                { &:before { content: "\e260"; } }
+
+// scon
+.scon-address                     { &:before { content: "\e900"; } }
+.scon-chevron-down                { &:before { content: "\e902"; } }
+.scon-chevron-left                { &:before { content: "\e904"; } }
+.scon-arrow-left                  { &:before { content: "\e906"; } }
+.scon-chevron-right               { &:before { content: "\e908"; } }
+.scon-arrow-right                 { &:before { content: "\e90a"; } }
+.scon-chevron-up                  { &:before { content: "\e90c"; } }
+.scon-cart                        { &:before { content: "\e90e"; } }
+.scon-check                       { &:before { content: "\e910"; } }
+.scon-close-large                 { &:before { content: "\e912"; } }
+.scon-close-small                 { &:before { content: "\e914"; } }
+.scon-coupon                      { &:before { content: "\e916"; } }
+.scon-daum                        { &:before { content: "\e918"; } }
+.scon-dot                         { &:before { content: "\e91a"; } }
+.scon-triangle-down               { &:before { content: "\e91c"; } }
+.scon-download                    { &:before { content: "\e91e"; } }
+.scon-fb                          { &:before { content: "\e920"; } }
+.scon-heart                       { &:before { content: "\e922"; } }
+.scon-info                        { &:before { content: "\e924"; } }
+.scon-insta                       { &:before { content: "\e926"; } }
+.scon-katalk                      { &:before { content: "\e928"; } }
+.scon-minus                       { &:before { content: "\e92a"; } }
+.scon-naver                       { &:before { content: "\e92c"; } }
+.scon-plus                        { &:before { content: "\e92e"; } }
+.scon-point                       { &:before { content: "\e930"; } }
+.scon-profile-empty               { &:before { content: "\e932"; } }
+.scon-profile                     { &:before { content: "\e934"; } }
+.scon-circle                      { &:before { content: "\e936"; } }
+.scon-remain                      { &:before { content: "\e938"; } }
+.scon-search                      { &:before { content: "\e93a"; } }
+.scon-step-left                   { &:before { content: "\e93c"; } }
+.scon-step-first                  { &:before { content: "\e93e"; } }
+.scon-step-second                 { &:before { content: "\e940"; } }
+.scon-step-third                  { &:before { content: "\e942"; } }
+.scon-trash                       { &:before { content: "\e944"; } }
+.scon-triangle-up                 { &:before { content: "\e946"; } }
+.scon-yt                          { &:before { content: "\e948"; } }

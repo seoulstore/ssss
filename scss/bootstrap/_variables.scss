@@ -83,14 +83,13 @@ $headings-color:          inherit !default;
 // [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
 // [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths.
 $icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
-$type-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
-
+$scon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
 //** File name for all font files.
 $icon-font-name:          "glyphicons-halflings-regular" !default;
-$type-font-name:          "NotoSansKR-Regular" !default;
+$scon-font-name:          "scons" !default;
 //** Element ID within SVG icon file.
-$icon-font-svg-id:        "glyphicons_halflingsregular" !default;
-
+$icon-font-svg-id:        "glyphicons_halflings-regular" !default;
+$scon-font-svg-id:        "scons" !default;
 
 //== Components
 //

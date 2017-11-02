@@ -16,11 +16,26 @@
   require('require-dir')('./gulp');
   
   gulp.task('dist', function () {
-    runSequence('clean:dist', 'concat:bootstrapCss', 'minify:bootstrapCss', 'concat:bootstrapJs', 'minify:bootstrapJs', 'copy:fonts');
+    runSequence(
+      'clean:dist', 
+      'concat:bootstrapCss', 
+      'minify:bootstrapCss', 
+      'concat:bootstrapJs', 
+      'minify:bootstrapJs', 
+      'copy:fonts'
+    );
   });
   
   gulp.task('docs', function () {
-    runSequence('concat:docsCss', 'concat:docsjs', 'concat:customizerjs', 'generateGlyphiconsData', 'generateRawFiles', 'pug');
+    runSequence(
+      'concat:docsCss', 
+      'concat:docsjs', 
+      'concat:customizerjs', 
+      'generateGlyphiconsData', 
+      'generateSconsData', 
+      'generateRawFiles', 
+      'pug'
+    );
   });
   
   gulp.task('build', function () {
@@ -36,6 +51,7 @@
       'concat:docsjs',
       'concat:customizerjs',
       'generateGlyphiconsData',
+      'generateSconsData',
       'generateRawFiles',
       'pug',
       'jekyll:build'

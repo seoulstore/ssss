@@ -9,6 +9,7 @@
       runSequence      = require('run-sequence'),
       path             = gulp.path,
       generateGlyphiconsData = require('../thirdParty/bs-glyphicons-data-generator.js'),
+      generateSconsData = require('../thirdParty/bs-scons-data-generator.js'),
       generateRawFiles       = require('../thirdParty/bs-raw-files-generator.js'),
       BsSassdocParser        = require('../thirdParty/bs-sassdoc-parser.js'),
       htmlminOpt = {
@@ -132,6 +133,10 @@
   
   gulp.task('generateGlyphiconsData', function () {
     generateGlyphiconsData.call();
+  });
+
+  gulp.task('generateSconsData', function () {
+    generateSconsData.call();
   });
   
   gulp.task('pug', function () {

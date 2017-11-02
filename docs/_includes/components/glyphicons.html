@@ -14,6 +14,17 @@
     </ul>
   </div>
 
+  <h2 id="glyphicons-glyphs">Available Scons</h2>
+  <div class="bs-glyphicons">
+    <ul class="bs-glyphicons-list">
+      {% for iconClassName in site.data.scons %}
+        <li>
+          <span class="scon {{ iconClassName }}" aria-hidden="true"></span>
+          <span class="scon-class">scon {{ iconClassName }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
   <h2 id="glyphicons-how-to-use">How to use</h2>
   <p>For performance reasons, all icons require a base class and individual icon class. To use, place the following code just about anywhere. Be sure to leave a space between the icon and text for proper padding.</p>
