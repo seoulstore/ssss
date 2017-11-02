@@ -25,6 +25,7 @@
   &.active {
     &:focus,
     &.focus {
+      outline: 0;
       @include tab-focus;
     }
   }
@@ -32,6 +33,7 @@
   &:hover,
   &:focus,
   &.focus {
+    outline: 0;
     color: $btn-default-color;
     text-decoration: none;
   }
