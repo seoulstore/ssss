@@ -3847,7 +3847,7 @@ tbody.collapse.in {
     margin-bottom: -1px; }
     .nav-tabs > li > a {
       color: #999999;
-      font-weight: 900;
+      font-weight: 700;
       line-height: 2.1;
       border: 1px solid transparent;
       background-color: #f9f9f9; }
@@ -3863,7 +3863,7 @@ tbody.collapse.in {
   margin-bottom: -1px; }
   .nav-tabs-reverse > li > a {
     color: #999999;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 2.1; }
     .nav-tabs-reverse > li > a:hover, .nav-tabs-reverse > li > a:focus {
       border-bottom: 2px solid #f9f9f9; }
