@@ -154,7 +154,15 @@ $btn-font-weight:                900 !default;
 
 $btn-default-color:              #333 !default;
 $btn-default-bg:                 #fff !default;
-$btn-default-border:             #333 !default;
+$btn-default-border:             #ccc !default;
+
+$btn-dark-color:              #333 !default;
+$btn-dark-bg:                 #fff !default;
+$btn-dark-border:             #333 !default;
+
+$btn-reverse-color:              #fff !default;
+$btn-reverse-bg:                 $gray-dark !default;
+$btn-reverse-border:             darken($btn-reverse-bg, 5%) !default;
 
 $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
@@ -165,7 +173,7 @@ $btn-success-bg:                 $brand-success !default;
 $btn-success-border:             darken($btn-success-bg, 5%) !default;
 
 $btn-info-color:                 #fff !default;
-$btn-info-bg:                    $gray-dark !default;
+$btn-info-bg:                    $brand-info !default;
 $btn-info-border:                darken($btn-info-bg, 5%) !default;
 
 $btn-warning-color:              #fff !default;
