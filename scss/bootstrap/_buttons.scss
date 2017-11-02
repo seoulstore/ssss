@@ -125,10 +125,12 @@ a.btn {
   &:hover,
   &:focus,
   &:active {
+    outline: 0;
     border-color: transparent;
   }
   &:hover,
   &:focus {
+    outline: 0;
     color: $link-hover-color;
     text-decoration: $link-hover-decoration;
     background-color: transparent;
@@ -137,6 +139,7 @@ a.btn {
   fieldset[disabled] & {
     &:hover,
     &:focus {
+      outline: 0;
       color: $btn-link-disabled-color;
       text-decoration: none;
     }

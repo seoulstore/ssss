@@ -13,7 +13,7 @@ $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 40%) !default; // #666
 $gray-light:             lighten($gray-base, 60%) !default; // #999
-// ccc, ddd, eee는 직접 타이핑 할 것
+// ddd, eee는 직접 타이핑 할 것
 $gray-lighter:           lighten(#000000, 97.65) !default; // #f9f9f9
 
 $brand-dark:            $gray-dark !default;
@@ -887,4 +887,4 @@ $dl-horizontal-offset:        $component-offset-horizontal !default;
 //** Point at which .dl-horizontal becomes horizontal
 $dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
 //** Horizontal line color.
-$hr-border:                   $gray-lighter !default;
+$hr-border:                   #ddd !default;
