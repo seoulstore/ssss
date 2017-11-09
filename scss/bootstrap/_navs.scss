@@ -169,6 +169,7 @@
       // margin-left: 2px;
       &:before {
         content: "|";
+        color: $nav-tabs-link-color;
       }
     }
 
