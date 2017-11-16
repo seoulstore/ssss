@@ -370,7 +370,20 @@ $container-large-desktop:      (1140px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
 
+//== Toggles
+//
+//## switch width & height ratio is 30:17:
+// available ratio: ['60:32:4', '42:24:3', '30:17:2']
+$toggles-switch-width:          42px !default;
+$toggles-switch-height:         24px !default;
+$toggles-switch-padding:        3px !default;
 
+$toggles-slider-width:          (($toggles-switch-width - ($toggles-switch-padding * 2)) / 2) !default;
+$toggles-slider-height:         $toggles-slider-width !default;
+$toggles-slider-transform:      $toggles-slider-width !default;
+$toggles-border-radius:         $toggles-switch-height !default;
+
+$toggles-background-color:      $brand-primary !default;
 //== Navbar
 //
 //##
