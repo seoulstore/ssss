@@ -23,7 +23,7 @@
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: $nav-link-hover-bg;
+      //   background-color: $nav-link-hover-bg;
       }
     }
 
@@ -123,10 +123,7 @@
       color: $nav-tabs-link-color;
       font-weight: 700;
       line-height: 2.1;
-      &:hover,
-      &:focus {
-        border-bottom: 2px solid $nav-link-hover-bg;
-      }
+      border-bottom: 2px solid #fff;
     }
 
     // Active state, and its :hover to override normal :hover

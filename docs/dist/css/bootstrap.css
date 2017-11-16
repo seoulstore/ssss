@@ -1178,7 +1178,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Apple SD Gothic Neo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "Apple SD Gothic Neo", Arial, sans-serif;
   font-size: 12px;
   line-height: 1.5;
   color: #333333;
@@ -3946,8 +3946,7 @@ tbody.collapse.in {
       display: block;
       padding: 10px 15px; }
       .nav > li > a:hover, .nav > li > a:focus {
-        text-decoration: none;
-        background-color: #f9f9f9; }
+        text-decoration: none; }
     .nav > li.disabled > a {
       color: #999999; }
       .nav > li.disabled > a:hover, .nav > li.disabled > a:focus {
@@ -3990,9 +3989,8 @@ tbody.collapse.in {
   .nav-tabs-reverse > li > a {
     color: #999999;
     font-weight: 700;
-    line-height: 2.1; }
-    .nav-tabs-reverse > li > a:hover, .nav-tabs-reverse > li > a:focus {
-      border-bottom: 2px solid #f9f9f9; }
+    line-height: 2.1;
+    border-bottom: 2px solid #fff; }
   .nav-tabs-reverse > li.active > a, .nav-tabs-reverse > li.active > a:hover, .nav-tabs-reverse > li.active > a:focus {
     color: #333333;
     background-color: #fff;
@@ -5587,7 +5585,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Apple SD Gothic Neo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "Apple SD Gothic Neo", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5700,7 +5698,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Apple SD Gothic Neo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "Apple SD Gothic Neo", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
