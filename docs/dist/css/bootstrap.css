@@ -4471,7 +4471,7 @@ tbody.collapse.in {
       color: #444; }
 
 .breadcrumb {
-  padding: 8px 15px;
+  padding: 8px 0px;
   margin-bottom: 18px;
   list-style: none;
   border-radius: 4px; }
