@@ -2835,6 +2835,28 @@
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills nav-stacked"</span><span class="nt">&gt;</span>
   ...
 <span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+  <p>If you want to change the font size, <code>.nav-large</code> and <code>.nav-ultra</code> are available.</p>
+  <div class="bs-example" data-example-id="simple-nav-stacked">
+    <ul class="nav nav-pills nav-stacked nav-large nav-pills-stacked-example">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills nav-stacked nav-large"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
+
+<div class="bs-example" data-example-id="simple-nav-stacked">
+    <ul class="nav nav-pills nav-stacked nav-ultra nav-pills-stacked-example">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav nav-pills nav-stacked nav-ultra"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/ul&gt;</span></code></pre></figure>
 
 
   <h2 id="nav-justified">Justified</h2>
@@ -4745,6 +4767,32 @@
 </div>
 
 <div class="bs-docs-section">
+  <h1 id="toggles" class="page-header">Toggles</h1>
+
+  <div class="bs-example" data-example-id="simple-toggles">
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
+
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Rectangular switch --&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"switch"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"slider"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/label&gt;</span>
+
+<span class="c">&lt;!-- Rounded switch --&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"switch"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"slider round"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/label&gt;</span></code></pre></figure>
+</div>
+<div class="bs-docs-section">
   <h1 id="responsive-embed" class="page-header">Responsive embed</h1>
 
   <p>Allow browsers to determine video or slideshow dimensions based on the width of their containing block by creating an intrinsic ratio that will properly scale on any device.</p>
@@ -4945,6 +4993,7 @@
     <li><a href="#panels-list-group">With list groups</a></li>
   </ul>
 </li>
+<li><a href="#toggles">Toggles</a></li>
 <li><a href="#responsive-embed">Responsive embed</a></li>
 <li><a href="#wells">Wells</a></li>
 

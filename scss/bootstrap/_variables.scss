@@ -45,7 +45,7 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Apple SD Gothic Neo", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, "Apple SD Gothic Neo", Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
@@ -370,7 +370,20 @@ $container-large-desktop:      (1140px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
 
+//== Toggles
+//
+//## switch width & height ratio is 30:17:
+// available ratio: ['60:32:4', '42:24:3', '30:17:2']
+$toggles-switch-width:          42px !default;
+$toggles-switch-height:         24px !default;
+$toggles-switch-padding:        3px !default;
 
+$toggles-slider-width:          (($toggles-switch-width - ($toggles-switch-padding * 2)) / 2) !default;
+$toggles-slider-height:         $toggles-slider-width !default;
+$toggles-slider-transform:      $toggles-slider-width !default;
+$toggles-border-radius:         $toggles-switch-height !default;
+
+$toggles-background-color:      $brand-primary !default;
 //== Navbar
 //
 //##
@@ -460,8 +473,7 @@ $nav-tabs-justified-active-link-border-color:     $body-bg !default;
 
 //== Pills
 $nav-pills-border-radius:                   $border-radius-base !default;
-$nav-pills-active-link-hover-bg:            $component-active-bg !default;
-$nav-pills-active-link-hover-color:         $component-active-color !default;
+$nav-pills-active-link-hover-color:         $gray-dark !default;
 
 
 //== Pagination
@@ -809,15 +821,15 @@ $badge-border-radius:         10px !default;
 //##
 
 $breadcrumb-padding-vertical:   8px !default;
-$breadcrumb-padding-horizontal: 15px !default;
+$breadcrumb-padding-horizontal: 0px !default;
 //** Breadcrumb background color
 $breadcrumb-bg:                 #f5f5f5 !default;
 //** Breadcrumb text color
-$breadcrumb-color:              #ccc !default;
+$breadcrumb-color:              $gray-dark !default;
 //** Text color of current page in the breadcrumb
-$breadcrumb-active-color:       $gray-light !default;
+$breadcrumb-active-color:       $gray-dark !default;
 //** Textual separator for between breadcrumb elements
-$breadcrumb-separator:          "/" !default;
+$breadcrumb-separator:          ">" !default;
 
 
 //== Carousel
