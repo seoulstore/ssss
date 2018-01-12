@@ -104,7 +104,20 @@
   
   gulp.task('concat:bootstrapJs', function () {
     
-    return gulp.src([path.root + 'js/*.js', '!' + path.root + 'js/tests'])
+    return gulp.src([
+        path.root + 'js/transition.js',
+        path.root + 'js/alert.js',
+        path.root + 'js/button.js',
+        path.root + 'js/carousel.js',
+        path.root + 'js/collapse.js',
+        path.root + 'js/dropdown.js',
+        path.root + 'js/modal.js',
+        path.root + 'js/tooltip.js',
+        path.root + 'js/popover.js',
+        path.root + 'js/scrollspy.js',
+        path.root + 'js/tab.js',
+        path.root + 'js/affix.js'
+      ])
       .pipe($.eslint())
       .pipe($.eslint.format())
       .pipe($.eslint.failOnError())
