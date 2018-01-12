@@ -35,7 +35,7 @@
     // Sidenav affixing
     setTimeout(function () {
       var $sideBar = $('.bs-docs-sidebar')
-
+      console.log('... heere');
       $sideBar.affix({
         offset: {
           top: function () {
