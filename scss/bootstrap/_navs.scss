@@ -83,7 +83,7 @@
     // Actual tabs (as links)
     > a {
       color: $nav-tabs-link-color;
-      font-weight: 700;
+      font-weight: bold;
       line-height: 2.1;
       border: 1px solid transparent;
       background-color: $nav-tabs-link-hover-bg;
@@ -96,7 +96,7 @@
       &:focus {
         color: $nav-tabs-active-link-hover-color;
         background-color: $nav-tabs-active-link-hover-bg;
-        border-top: 2px solid $nav-tabs-active-link-hover-border-color;
+        border-top: 1px solid $nav-tabs-active-link-hover-border-color;
         border-bottom-color: transparent;
         cursor: default;
       }
@@ -121,7 +121,7 @@
     // Actual tabs (as links)
     > a {
       color: $nav-tabs-link-color;
-      font-weight: 700;
+      font-weight: bold;
       line-height: 2.1;
       border-bottom: 1px solid #ccc;
     }
@@ -133,7 +133,7 @@
       &:focus {
         color: $nav-tabs-active-link-hover-color;
         background-color: $nav-tabs-active-link-hover-bg;
-        border-bottom: 2px solid $nav-tabs-active-link-hover-border-color;
+        border-bottom: 1px solid $nav-tabs-active-link-hover-border-color;
         border-top-color: transparent;
         cursor: default;
       }
@@ -155,7 +155,7 @@
     // Links rendered as pills
     > a {
       display: inline-block;
-      font-weight: 700;
+      font-weight: bold;
       color: $nav-tabs-link-color;
       &:hover,
       &:focus {
