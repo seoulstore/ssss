@@ -1806,6 +1806,22 @@ input[type="search"] {
 .form-group {
   margin-bottom: 15px; }
 
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+  display: none; }
+  .checkbox input[type="checkbox"]:checked + i, .checkbox-inline input[type="checkbox"]:checked + i {
+    background-color: #333; }
+
+.checkbox i, .checkbox-inline i {
+  float: left;
+  margin-left: -20px;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  background-color: #ddd;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff; }
+
 .radio,
 .checkbox {
   position: relative;
@@ -2137,6 +2153,10 @@ select[multiple].input-lg,
     margin-top: 0;
     margin-bottom: 0;
     vertical-align: middle; }
+    .form-inline .radio input[type="checkbox"] + i,
+    .form-inline .checkbox input[type="checkbox"] + i {
+      margin-left: 0;
+      margin-right: 5px; }
     .form-inline .radio label,
     .form-inline .checkbox label {
       padding-left: 0; }
@@ -3531,6 +3551,10 @@ tbody.collapse.in {
       margin-top: 0;
       margin-bottom: 0;
       vertical-align: middle; }
+      .navbar-form .radio input[type="checkbox"] + i,
+      .navbar-form .checkbox input[type="checkbox"] + i {
+        margin-left: 0;
+        margin-right: 5px; }
       .navbar-form .radio label,
       .navbar-form .checkbox label {
         padding-left: 0; }
