@@ -221,6 +221,27 @@ input[type="search"] {
 //
 // Indent the labels to position radios/checkboxes as hanging controls.
 
+.checkbox, .checkbox-inline {
+  input[type="checkbox"] {
+    display: none;
+    &:checked + i {
+      background-color: #333;
+    }
+  }
+
+  i {
+    float: left;
+    margin-left: -20px;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    background-color: #ddd;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
 .radio,
 .checkbox {
   position: relative;
@@ -522,6 +543,11 @@ input[type="checkbox"] {
       margin-top: 0;
       margin-bottom: 0;
       vertical-align: middle;
+
+      input[type="checkbox"] + i {
+        margin-left: 0;
+        margin-right: 5px;
+      }
 
       label {
         padding-left: 0;
