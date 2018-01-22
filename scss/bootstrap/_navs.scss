@@ -188,7 +188,7 @@
     float: none;
     line-height: 1.3;
     > a {
-      padding: 0 15px;
+      padding: 6px 10px;
       &:hover,
       &:focus {
         background-color: transparent;
@@ -211,9 +211,19 @@
   }
 }
 
+.nav-small {
+  > li {
+    > a {
+      padding: 4px 10px;
+      font-size: 12px;
+    }
+  }
+}
+
 .nav-large {
   > li {
     > a {
+      padding: 8px 10px;
       font-size: 16px;
     }
   }
