@@ -82,24 +82,21 @@
   });
   
   gulp.task('concat:bootstrapCss', function () {
-    
     return gulp.src(path.scss + '/**/*.scss')
       .pipe($.sassLint())
       .pipe($.sassLint.failOnError())
       .pipe($.sass().on('error', $.sassError.gulpSassError(true)))
+      .pipe($.rename('bootstrap.css'))
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
-    
   });
   
   gulp.task('minify:bootstrapCss', function () {
-    
     return gulp.src(path.scss + '/**/*.scss')
       .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sassError.gulpSassError(true)))
       .pipe($.rename('bootstrap.min.css'))
       .pipe($.postcss([autoprefixer()]))
       .pipe(gulp.dest(path.dist + '/css'));
-    
   });
   
   gulp.task('concat:bootstrapJs', function () {

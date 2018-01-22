@@ -21,7 +21,7 @@
         .pipe(sass({outputStyle: 'compressed'}).on('error', sassError.gulpSassError(true)))
         .pipe(postcss([autoprefixer()]))
         .pipe(debug())
-        .pipe(gulp.dest(path.docs + '/dist/css'));
+        .pipe(gulp.dest(path.dist + '/css'));
       
     });
     
