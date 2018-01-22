@@ -221,8 +221,33 @@ input[type="search"] {
 //
 // Indent the labels to position radios/checkboxes as hanging controls.
 
-.checkbox, .checkbox-inline {
-  input[type="checkbox"] {
+.radio, .radio-inline {
+  i {
+    border-radius: 50%;
+    text-align: center;
+
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 6px;
+      height: 6px;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.checkbox, .radio, .checkbox-inline, .radio-inline {
+  input[type="checkbox"],
+  input[type="radio"] {
     display: none;
     &:checked + i {
       background-color: #333;
