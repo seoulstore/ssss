@@ -580,12 +580,9 @@ p {
 
 .lead {
   margin-bottom: 21px;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.4; }
-  @media (min-width: 768px) {
-    .lead {
-      font-size: 21px; } }
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 28px; }
 
 small,
 .small {
@@ -1665,8 +1662,9 @@ legend {
 label {
   display: inline-block;
   max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: bold; }
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 12.04px; }
 
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -1804,7 +1802,7 @@ input[type="search"] {
     line-height: 43px; } }
 
 .form-group {
-  margin-bottom: 15px; }
+  margin-bottom: 24px; }
 
 .radio i, .radio-inline i {
   border-radius: 50%;
@@ -2144,9 +2142,9 @@ select[multiple].input-lg,
 
 .help-block {
   display: block;
-  margin-top: 5px;
+  margin-top: 8px;
   margin-bottom: 10px;
-  color: #737373; }
+  color: #999999; }
 
 @media (min-width: 768px) {
   .form-inline .form-group {
