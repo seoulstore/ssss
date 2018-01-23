@@ -3254,20 +3254,27 @@ tbody.collapse.in {
     max-width: none; }
 
 .nav-tabs {
-  border-bottom: 1px solid #f9f9f9; }
+  border-bottom: 1px solid #333333; }
   .nav-tabs > li {
     float: left;
     margin-bottom: -1px; }
     .nav-tabs > li > a {
-      color: #999999;
+      color: #ccc;
       font-weight: bold;
-      line-height: 2.1;
-      border: 1px solid transparent;
-      background-color: #f9f9f9; }
+      line-height: 1.2;
+      border-top: 1px solid #ddd;
+      border-left: 1px solid transparent;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #333333;
+      background-color: #fff; }
+      .nav-tabs > li > a:first {
+        border-left: 1px solid #ddd; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
       color: #333333;
       background-color: #fff;
       border-top: 1px solid #333333;
+      border-right: 1px solid #333333;
+      border-left: 1px solid #333333;
       border-bottom-color: transparent;
       cursor: default; }
 
@@ -3275,7 +3282,7 @@ tbody.collapse.in {
   float: left;
   margin-bottom: -1px; }
   .nav-tabs-reverse > li > a {
-    color: #999999;
+    color: #ccc;
     font-weight: bold;
     line-height: 2.1;
     border-bottom: 1px solid #ccc; }
@@ -3291,12 +3298,12 @@ tbody.collapse.in {
   .nav-pills > li > a {
     display: inline-block;
     font-weight: bold;
-    color: #999999; }
+    color: #ccc; }
     .nav-pills > li > a:hover, .nav-pills > li > a:focus {
       background-color: transparent; }
   .nav-pills > li + li:before {
     content: "|";
-    color: #999999; }
+    color: #ccc; }
   .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #333333; }
 
@@ -3316,8 +3323,10 @@ tbody.collapse.in {
     background-color: transparent; }
 
 .nav-small > li > a {
-  padding: 2px 10px;
   font-size: 12px; }
+
+.nav-small.nav-stacked > li > a {
+  padding: 2px 10px; }
 
 .nav-large > li > a {
   padding: 8px 10px;
@@ -3343,10 +3352,6 @@ tbody.collapse.in {
   border-bottom: 0; }
   .nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a, .nav-tabs-reverse.nav-justified > li > a {
     margin-right: 0; }
-  .nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-reverse.nav-justified > .active > a,
-  .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-reverse.nav-justified > .active > a:hover,
-  .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus, .nav-tabs-reverse.nav-justified > .active > a:focus {
-    border-top: 2px solid #333333; }
 
 .tab-content > .tab-pane {
   display: none; }
