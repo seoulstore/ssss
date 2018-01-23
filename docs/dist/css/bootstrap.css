@@ -3267,8 +3267,8 @@ tbody.collapse.in {
       border-right: 1px solid #ddd;
       border-bottom: 1px solid #333333;
       background-color: #fff; }
-      .nav-tabs > li > a:first {
-        border-left: 1px solid #ddd; }
+    .nav-tabs > li:first-child > a {
+      border-left: 1px solid #ddd; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
       color: #333333;
       background-color: #fff;
