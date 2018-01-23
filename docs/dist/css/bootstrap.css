@@ -1662,7 +1662,7 @@ legend {
 label {
   display: inline-block;
   max-width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-weight: bold; }
 
 input[type="search"] {
@@ -1801,7 +1801,7 @@ input[type="search"] {
     line-height: 43px; } }
 
 .form-group {
-  margin-bottom: 15px; }
+  margin-bottom: 24px; }
 
 .radio i, .radio-inline i {
   border-radius: 50%;
@@ -2141,9 +2141,9 @@ select[multiple].input-lg,
 
 .help-block {
   display: block;
-  margin-top: 5px;
+  margin-top: 8px;
   margin-bottom: 10px;
-  color: #737373; }
+  color: #999999; }
 
 @media (min-width: 768px) {
   .form-inline .form-group {
