@@ -26,7 +26,12 @@ _gh_pages 디렉터리는 github.io의 정적 웹의 베이스가 될 디렉터�
   * docs 디렉터리를 베이스로 _gh_page 디렉터리를 만들어요.
 
 
-### Changelogs 
+### Changelogs
+
+#### 2018-01-24 
+
+* Components -> Object Alignment 추가 ([SSSS Page](http://ssss.seoulstore.com/components/#object-alignment))
+* 요소들의 세로 정렬을 맞추기 위한 class 작성
 
 #### 2018-01-22
 
