@@ -5,13 +5,13 @@
 
 .breadcrumb {
   padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
-  margin-bottom: $line-height-computed;
+  margin-bottom: 0;
   list-style: none;
   border-radius: $border-radius-base;
 
   > li {
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 
     > a {
