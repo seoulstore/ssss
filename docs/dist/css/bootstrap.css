@@ -4781,6 +4781,26 @@ button.list-group-item-danger {
   padding: 9px;
   border-radius: 3px; }
 
+.oa-container {
+  display: table;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.oa-top, .oa-middle, .oa-bottom {
+  display: table-cell; }
+  .oa-top p, .oa-middle p, .oa-bottom p {
+    margin: 0; }
+
+.oa-top {
+  vertical-align: top; }
+
+.oa-middle {
+  vertical-align: middle; }
+
+.oa-bottom {
+  vertical-align: bottom; }
+
 .close {
   float: right;
   font-size: 21px;
