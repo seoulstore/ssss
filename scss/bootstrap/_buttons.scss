@@ -49,7 +49,7 @@
   &[disabled],
   fieldset[disabled] & {
     cursor: $cursor-disabled;
-    @include button-variant($btn-disabled-color, #999, $btn-disabled-border);
+    @include button-variant($btn-disabled-color, $btn-disabled-background, $btn-disabled-border);
     @include opacity(.65);
     @include box-shadow(none);
   }
@@ -74,7 +74,7 @@ a.btn {
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    @include button-variant($btn-disabled-color, $btn-default-bg, $btn-disabled-border);
+    @include button-variant(#ddd, $btn-default-bg, $btn-disabled-border);
   }
 }
 .btn-dark {

@@ -18,10 +18,10 @@ $gray-lighter:           lighten(#000000, 97.65) !default; // #f9f9f9
 
 $brand-dark:            $gray-dark !default;
 $brand-primary:         #F70061 !default;
-$brand-success:         #5cb85c !default;
+$brand-success:         #32DE00 !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
+$brand-danger:          $brand-primary !default;
 
 
 //== Scaffolding
@@ -184,7 +184,8 @@ $btn-danger-color:               #fff !default;
 $btn-danger-bg:                  $brand-danger !default;
 $btn-danger-border:              darken($btn-danger-bg, 5%) !default;
 
-$btn-disabled-color:             #ddd !default;
+$btn-disabled-color:             #fff !default;
+$btn-disabled-background:        #ddd !default;
 $btn-disabled-border:            #ddd !default;
 
 $btn-link-disabled-color:        $gray-light !default;
@@ -529,8 +530,8 @@ $jumbotron-heading-font-size:    ceil(($font-size-base * 4.5)) !default;
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             #3c763d !default;
-$state-success-bg:               #dff0d8 !default;
+$state-success-text:             $brand-success !default;
+$state-success-bg:               $brand-success !default;
 $state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
 
 $state-info-text:                #31708f !default;
@@ -541,8 +542,8 @@ $state-warning-text:             #8a6d3b !default;
 $state-warning-bg:               #fcf8e3 !default;
 $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
 
-$state-danger-text:              #a94442 !default;
-$state-danger-bg:                #f2dede !default;
+$state-danger-text:              $brand-danger !default;
+$state-danger-bg:                $brand-danger !default;
 $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
 
 
@@ -820,7 +821,7 @@ $badge-border-radius:         10px !default;
 //
 //##
 
-$breadcrumb-padding-vertical:   8px !default;
+$breadcrumb-padding-vertical:   0px !default;
 $breadcrumb-padding-horizontal: 0px !default;
 //** Breadcrumb background color
 $breadcrumb-bg:                 #f5f5f5 !default;
