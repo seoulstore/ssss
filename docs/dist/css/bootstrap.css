@@ -504,7 +504,7 @@ hr {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1.1;
   color: inherit; }
   h1 small,
@@ -1712,6 +1712,7 @@ output {
   background-image: none;
   border: 1px solid #ddd;
   border-radius: 4px;
+  -webkit-appearance: none;
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
@@ -2228,7 +2229,7 @@ select[multiple].input-lg,
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: 900;
+  font-weight: bold;
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
@@ -4698,8 +4699,8 @@ button.list-group-item-danger {
 .switch {
   position: relative;
   display: inline-block;
-  width: 42px;
-  height: 24px; }
+  width: 26px;
+  height: 16px; }
   .switch > .slider {
     position: absolute;
     cursor: pointer;
@@ -4707,33 +4708,33 @@ button.list-group-item-danger {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #ddd;
     -webkit-transition: .4s;
     transition: .4s; }
     .switch > .slider:before {
       position: absolute;
       content: "";
-      height: 18px;
-      width: 18px;
+      height: 10px;
+      width: 10px;
       left: 3px;
       bottom: 3px;
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s; }
     .switch > .slider.round {
-      border-radius: 24px; }
+      border-radius: 16px; }
       .switch > .slider.round:before {
         border-radius: 50%; }
   .switch > input {
     display: none; }
     .switch > input:checked + .slider {
-      background-color: #F70061; }
+      background-color: #333333; }
     .switch > input:focus + .slider {
-      -webkit-box-shadow: 0 0 1px #F70061;
-              box-shadow: 0 0 1px #F70061; }
+      -webkit-box-shadow: 0 0 1px #333333;
+              box-shadow: 0 0 1px #333333; }
     .switch > input:checked + .slider:before {
-      -webkit-transform: translateX(18px);
-      transform: translateX(18px); }
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px); }
 
 .embed-responsive {
   position: relative;
