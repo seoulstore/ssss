@@ -22,6 +22,7 @@
         .pipe(postcss([autoprefixer()]))
         .pipe(debug())
         .pipe(gulp.dest(path.dist + '/css'));
+        // .pipe(gulp.dest('/Users/afr5/dev/afr5/ss/ss/app/client/libs'));
       
     });
     
