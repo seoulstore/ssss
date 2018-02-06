@@ -44,7 +44,6 @@
 .modal-dialog {
   position: relative;
   width: auto;
-  margin: 10px;
 }
 
 // Actual modal
@@ -53,9 +52,8 @@
   background-color: $modal-content-bg;
   border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
   border: 1px solid $modal-content-border-color;
-  border-radius: $border-radius-large;
-  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
-  background-clip: padding-box;
+  // @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  // background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
 }
@@ -78,7 +76,6 @@
 // Top section of the modal w/ title and dismiss
 .modal-header {
   padding: $modal-title-padding;
-  border-bottom: 1px solid $modal-header-border-color;
   @include clearfix;
 }
 // Close icon
@@ -101,7 +98,8 @@
 
 // Footer (for actions)
 .modal-footer {
-  padding: $modal-inner-padding;
+  // padding-top: $modal-inner-padding;
+  padding: 20px 20px 50px;
   text-align: right; // right align buttons
   border-top: 1px solid $modal-footer-border-color;
   @include clearfix; // clear it in case folks use .pull-* classes on buttons
@@ -138,6 +136,7 @@
     margin: 30px auto;
   }
   .modal-content {
+    border-radius: $border-radius-large;
     @include box-shadow(0 5px 15px rgba(0,0,0,.5));
   }
 

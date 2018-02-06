@@ -22,9 +22,9 @@ $('#myModal').on('shown.bs.modal', function () {
 })
 {% endhighlight %}
 
-  <h2 id="modals-examples">Examples</h2>
+  <h2 id="modals-examples">예제</h2>
 
-  <h3>Static example</h3>
+  <h3>정적 예제</h3>
   <p>A rendered modal with header, body, and set of actions in the footer.</p>
   <div class="bs-example bs-example-modal" data-example-id="static-modal">
     <div class="modal" tabindex="-1" role="dialog">
@@ -32,14 +32,20 @@ $('#myModal').on('shown.bs.modal', function () {
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Modal title</h4>
+            <h5 class="modal-title">배송지 추척하기</h5>
           </div>
           <div class="modal-body">
-            <p>One fine body&hellip;</p>
+            <p>택배 기사님의 띵동 소리가 기다려지는 곳은?</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="row">
+              <div class="col-xs-6 col-sm-offset-3 col-sm-3">
+                <button type="button" class="btn btn-default btn-block" data-dismiss="modal">취소하기</button>
+              </div>
+              <div class="col-xs-6 col-sm-3">
+                <button type="button" class="btn btn-reverse btn-block">저장하기</button>
+              </div>
+            </div>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
@@ -51,14 +57,20 @@ $('#myModal').on('shown.bs.modal', function () {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <h5 class="modal-title">배송지 추척하기</h5>
       </div>
       <div class="modal-body">
-        <p>One fine body&hellip;</p>
+        <p>택배 기사님의 띵동 소리가 기다려지는 곳은?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <div class="row">
+          <div class="col-xs-6 col-sm-offset-3 col-sm-3">
+            <button type="button" class="btn btn-default btn-block" data-dismiss="modal">취소하기</button>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <button type="button" class="btn btn-reverse btn-block">저장하기</button>
+          </div>
+        </div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
