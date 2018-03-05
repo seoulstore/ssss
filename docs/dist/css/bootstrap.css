@@ -1712,7 +1712,6 @@ output {
   background-image: none;
   border: 1px solid #ddd;
   border-radius: 4px;
-  -webkit-appearance: none;
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
