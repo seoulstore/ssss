@@ -1741,7 +1741,7 @@ output {
 textarea.form-control {
   height: auto; }
 
-input[type="search"] {
+input:not([type=checkbox]):not([type=radio]) {
   -webkit-appearance: none; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {

@@ -173,7 +173,7 @@ textarea.form-control {
 // be added to `.form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
-input[type="search"] {
+input:not([type=checkbox]):not([type=radio]) {
   -webkit-appearance: none;
 }
 
