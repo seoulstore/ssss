@@ -10,7 +10,6 @@
   padding: $alert-padding;
   margin-bottom: $line-height-computed;
   border: 1px solid transparent;
-  border-radius: $alert-border-radius;
 
   // Headings for larger alerts
   h4 {
@@ -70,4 +69,8 @@
 
 .alert-danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+}
+
+.alert-reverse {
+  @include alert-variant($alert-reverse-bg, $alert-reverse-border, $alert-reverse-text);
 }
