@@ -12,10 +12,13 @@
     position: relative;
     float: left;
     // Bring the "active" button to the front
-    &:hover,
+    // &:hover,
     &:focus,
     &:active,
     &.active {
+      color: #fff;
+      border-color: #333;
+      background-color: #333;
       z-index: 2;
     }
   }

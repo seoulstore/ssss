@@ -546,7 +546,9 @@ $state-danger-text:              $brand-danger !default;
 $state-danger-bg:                $brand-danger !default;
 $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
 
-
+$state-reverse-text:             #fff !default;
+$state-reverse-bg:               #333 !default;
+$state-reverse-border:           darken(adjust-hue($state-reverse-bg, -10), 5%) !default;
 //== Tooltips
 //
 //##
@@ -659,7 +661,7 @@ $alert-border-radius:         $border-radius-base !default;
 $alert-link-font-weight:      bold !default;
 
 $alert-success-bg:            $state-success-bg !default;
-$alert-success-text:          $state-success-text !default;
+$alert-success-text:          #fff !default;
 $alert-success-border:        $state-success-border !default;
 
 $alert-info-bg:               $state-info-bg !default;
@@ -671,9 +673,12 @@ $alert-warning-text:          $state-warning-text !default;
 $alert-warning-border:        $state-warning-border !default;
 
 $alert-danger-bg:             $state-danger-bg !default;
-$alert-danger-text:           $state-danger-text !default;
+$alert-danger-text:           #fff !default;
 $alert-danger-border:         $state-danger-border !default;
 
+$alert-reverse-bg:            $state-reverse-bg !default;
+$alert-reverse-text:          $state-reverse-text !default;
+$alert-reverse-border:        $state-reverse-border !default;
 
 //== Progress bars
 //
