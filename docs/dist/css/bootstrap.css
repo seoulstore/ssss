@@ -266,6 +266,15 @@ th {
 .scon {
   font-family: 'scon'; }
 
+.scon-home:before {
+  content: "\e932"; }
+
+.scon-heart-empty1:before {
+  content: "\e930"; }
+
+.scon-heart:before {
+  content: "\e918"; }
+
 .scon-chevron-up:before {
   content: "\e900"; }
 
@@ -338,8 +347,8 @@ th {
 .scon-heart-empty:before {
   content: "\e917"; }
 
-.scon-heart:before {
-  content: "\e918"; }
+.scon-heart1:before {
+  content: "\e92f"; }
 
 .scon-info:before {
   content: "\e919"; }

@@ -1,6 +1,9 @@
 # This file is generated via Grunt task. **Do not edit directly.**
 # See the 'build-scons-data' task in Gruntfile.js.
 
+- scon-home
+- scon-heart-empty1
+- scon-heart
 - scon-chevron-up
 - scon-arrow-left
 - scon-arrow-right
@@ -25,7 +28,7 @@
 - scon-download
 - scon-fb
 - scon-heart-empty
-- scon-heart
+- scon-heart1
 - scon-info
 - scon-insta
 - scon-katalk
