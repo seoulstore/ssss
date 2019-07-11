@@ -322,6 +322,9 @@
 // .glyphicon-menu-up                { &:before { content: "\e260"; } }
 
 // scon
+.scon-home                        { &:before { content: "\e932"; } }
+.scon-heart-empty1                { &:before { content: "\e930"; } }
+.scon-heart                       { &:before { content: "\e918"; } }
 .scon-chevron-up                  { &:before { content: "\e900"; } }
 .scon-arrow-left                  { &:before { content: "\e901"; } }
 .scon-arrow-right                 { &:before { content: "\e902"; } }
@@ -346,7 +349,7 @@
 .scon-download                    { &:before { content: "\e915"; } }
 .scon-fb                          { &:before { content: "\e916"; } }
 .scon-heart-empty                 { &:before { content: "\e917"; } }
-.scon-heart                       { &:before { content: "\e918"; } }
+.scon-heart1                      { &:before { content: "\e92f"; } }
 .scon-info                        { &:before { content: "\e919"; } }
 .scon-insta                       { &:before { content: "\e91a"; } }
 .scon-katalk                      { &:before { content: "\e91b"; } }
