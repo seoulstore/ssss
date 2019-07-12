@@ -15,7 +15,7 @@ git checkout -B gh-pages || exit 1
 echo "Remove"
 rm -rf \
 bower.json CHANGELOG.md composer.json _config.yml \
-CONTRIBUTING.md deploy.sh fonts Gemfile Gemfile.lock \
+CONTRIBUTING.md deploy.sh Gemfile Gemfile.lock \
 gulp .hound.yml ISSUE_TEMPLATE.md js \
 npm-shrinkwrap.json nuget package.js package.json \
 package-lock.json .sass-cache docs \
