@@ -323,7 +323,7 @@
 
 // scon
 .scon-home                        { &:before { content: "\e932"; } }
-.scon-heart-empty1                { &:before { content: "\e930"; } }
+.scon-heart-empty                 { &:before { content: "\e930"; } }
 .scon-heart                       { &:before { content: "\e918"; } }
 .scon-chevron-up                  { &:before { content: "\e900"; } }
 .scon-arrow-left                  { &:before { content: "\e901"; } }
@@ -332,12 +332,12 @@
 .scon-check                       { &:before { content: "\e904"; } }
 .scon-chevron-left-circle         { &:before { content: "\e905"; } }
 .scon-chevron-right-circle        { &:before { content: "\e906"; } }
-.scon-chevron-up-down             { &:before { content: "\e907"; } }
+.scon-cheveron-up-down            { &:before { content: "\e907"; } }
 .scon-chevron-down                { &:before { content: "\e908"; } }
 .scon-chevron-left-fill           { &:before { content: "\e909"; } }
 .scon-chevron-right-fill          { &:before { content: "\e90a"; } }
-.scon-chevron-left                { &:before { content: "\e90b"; } }
 .scon-chevron-right               { &:before { content: "\e90c"; } }
+.scon-chevron-left                { &:before { content: "\e90b"; } }
 .scon-minus-circle                { &:before { content: "\e90d"; } }
 .scon-plus-circle                 { &:before { content: "\e90e"; } }
 .scon-close-circle                { &:before { content: "\e90f"; } }
@@ -348,8 +348,6 @@
 .scon-coupon                      { &:before { content: "\e914"; } }
 .scon-download                    { &:before { content: "\e915"; } }
 .scon-fb                          { &:before { content: "\e916"; } }
-.scon-heart-empty                 { &:before { content: "\e917"; } }
-.scon-heart1                      { &:before { content: "\e92f"; } }
 .scon-info                        { &:before { content: "\e919"; } }
 .scon-insta                       { &:before { content: "\e91a"; } }
 .scon-katalk                      { &:before { content: "\e91b"; } }

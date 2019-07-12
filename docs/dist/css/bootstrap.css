@@ -269,7 +269,7 @@ th {
 .scon-home:before {
   content: "\e932"; }
 
-.scon-heart-empty1:before {
+.scon-heart-empty:before {
   content: "\e930"; }
 
 .scon-heart:before {
@@ -296,7 +296,7 @@ th {
 .scon-chevron-right-circle:before {
   content: "\e906"; }
 
-.scon-chevron-up-down:before {
+.scon-cheveron-up-down:before {
   content: "\e907"; }
 
 .scon-chevron-down:before {
@@ -308,11 +308,11 @@ th {
 .scon-chevron-right-fill:before {
   content: "\e90a"; }
 
-.scon-chevron-left:before {
-  content: "\e90b"; }
-
 .scon-chevron-right:before {
   content: "\e90c"; }
+
+.scon-chevron-left:before {
+  content: "\e90b"; }
 
 .scon-minus-circle:before {
   content: "\e90d"; }
@@ -343,12 +343,6 @@ th {
 
 .scon-fb:before {
   content: "\e916"; }
-
-.scon-heart-empty:before {
-  content: "\e917"; }
-
-.scon-heart1:before {
-  content: "\e92f"; }
 
 .scon-info:before {
   content: "\e919"; }
