@@ -29,5 +29,4 @@
   });
   
   gulp.task('watch', ['watch:scss']);
-  
 })();
