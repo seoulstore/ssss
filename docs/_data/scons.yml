@@ -2,7 +2,7 @@
 # See the 'build-scons-data' task in Gruntfile.js.
 
 - scon-home
-- scon-heart-empty1
+- scon-heart-empty
 - scon-heart
 - scon-chevron-up
 - scon-arrow-left
@@ -11,12 +11,12 @@
 - scon-check
 - scon-chevron-left-circle
 - scon-chevron-right-circle
-- scon-chevron-up-down
+- scon-cheveron-up-down
 - scon-chevron-down
 - scon-chevron-left-fill
 - scon-chevron-right-fill
-- scon-chevron-left
 - scon-chevron-right
+- scon-chevron-left
 - scon-minus-circle
 - scon-plus-circle
 - scon-close-circle
@@ -27,8 +27,6 @@
 - scon-coupon
 - scon-download
 - scon-fb
-- scon-heart-empty
-- scon-heart1
 - scon-info
 - scon-insta
 - scon-katalk
