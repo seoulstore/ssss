@@ -29,6 +29,7 @@ _gh_pages 디렉터리는 github.io의 정적 웹의 베이스가 될 디렉터�
   * `Travis-CI` `SSSS` 에서 사용되는 `GH_TOKEN` 값은 개인 계정으로 만들어 사용했었는데 `system@dunit.kr` 계정 거로 생성하여 변경 하였음.
   * `bootstrap.css`의 내용이 변경 될 경우 웹앱의 `bootstrap.css`도 변경 해주세요.
   * `gh-pages` 브랜치는 특별하게 따로 손 댈 일이 없을 것 같아요. `master` 브랜치에 변경 사항이 적용 될 경우 알아서 처리합니다. ([deploy.sh 참고](https://github.com/seoulstore/ssss/blob/master/deploy.sh))
+  * 그리고 해당 리포는 퍼블릭이라 [트래비스닷오알쥐](https://travis-ci.org)로 가셔서 확인 하셔야 함.
 ---
 
 ### Changelogs
