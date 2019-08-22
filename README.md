@@ -51,3 +51,9 @@ _gh_pages 디렉터리는 github.io의 정적 웹의 베이스가 될 디렉터�
 * ssss.seoulstore.com CNAME 레코드 추가
 * gulp (watch, jekyll build, browser sync) 추가 (2017-09-11 [scjang](https://github.com/scjang))
 
+---
+
+### Questions
+  * ssss build 하고 docs/dist/css 경로에 있는 bootstrap.css 파일을  ss프로젝트로 옮기는게 맞나요?
+    * 네 맞아요. `gulp build` task를 확인해보시면 알 수 있습니다.
+
