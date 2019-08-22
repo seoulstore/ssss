@@ -25,6 +25,7 @@ _gh_pages 디렉터리는 github.io의 정적 웹의 베이스가 될 디렉터�
   * 컨캣, 미니파이, 어글리파이 등등
   * docs 디렉터리를 베이스로 _gh_page 디렉터리를 만들어요.
 
+---
 
 ### Changelogs
 
