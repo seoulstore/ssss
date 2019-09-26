@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ssss:
+    image: finalsoul/ssss:dev
+    volumes:
+      - ./docs:/home/app/ssss/docs
+      - ./fonts:/home/app/ssss/fonts
+      - ./scss:/home/app/ssss/scss
+    command: gulp serve
+    ports:
+      - "7000:7000"
+      - "3001:3001"
